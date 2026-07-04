@@ -1,0 +1,207 @@
+aid: ezyvet
+url: https://raw.githubusercontent.com/api-evangelist/ezyvet/refs/heads/main/apis.yml
+name: ezyVet
+kind: company
+description: ezyVet is cloud-based veterinary practice information management software
+  (PIMS) for clinics, specialty, and emergency hospitals, covering patient records,
+  scheduling, clinical workflows, billing, inventory, and diagnostics. Founded in New
+  Zealand in 2006, ezyVet was acquired by IDEXX Laboratories in June 2021 and sits
+  alongside IDEXX's Cornerstone and Neo PIMS offerings (the acquisition also included
+  Vet Radar). ezyVet exposes a documented RESTful API of roughly 216 endpoints over
+  animals/patients, contacts/clients, appointments, consultations, invoices, products,
+  and diagnostics. The API is partner-gated - developer access requires an approved
+  integration application and issued client credentials - but the endpoint catalog,
+  best-practice guides, and a full Postman collection are publicly documented at
+  developers.ezyvet.com. Authentication is OAuth 2.0 Client Credentials with 12-hour
+  bearer tokens.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Veterinary
+- Practice Management
+- PIMS
+- Healthcare
+- Animal Health
+- IDEXX
+- Partner Gated
+created: '2026-07-04'
+modified: '2026-07-04'
+specificationVersion: '0.19'
+apis:
+- aid: ezyvet:ezyvet-authentication-api
+  name: ezyVet Authentication API
+  tags:
+  - OAuth
+  - Authentication
+  - Tokens
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: Documentation
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: APIReference
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: OAuth 2.0 Client Credentials token endpoint. Exchange partner_id,
+    client_id, client_secret, grant_type, and scope for a bearer access token with a
+    12-hour TTL, which authorizes every other ezyVet API call. (Endpoint confirmed
+    from ezyVet developer docs.)
+- aid: ezyvet:ezyvet-animals-api
+  name: ezyVet Animals (Patients) API
+  tags:
+  - Animals
+  - Patients
+  - Records
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Manage animal (patient) records - the pets treated by a practice -
+    including species, breed, sex, colour, microchip, owner linkage, and clinical
+    metadata. Supporting reference resources cover species, breed, colour, and sex.
+    (Resource category confirmed; individual paths modeled on the ezyVet /v1 pattern.)
+- aid: ezyvet:ezyvet-contacts-api
+  name: ezyVet Contacts (Clients) API
+  tags:
+  - Contacts
+  - Clients
+  - CRM
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Create, list, retrieve, update, and delete contacts - the clients (pet
+    owners), businesses, vendors, and staff a practice interacts with - along with
+    their addresses and contact details. GET/POST /v1/contact and PATCH/DELETE
+    /v1/contact/{id} are confirmed from ezyVet developer docs.
+- aid: ezyvet:ezyvet-appointments-api
+  name: ezyVet Appointments API
+  tags:
+  - Appointments
+  - Scheduling
+  - Calendar
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Book and manage appointments against animals, contacts, resources, and
+    users, with supporting appointment type and appointment status reference resources.
+    (Resource category confirmed; paths modeled on the ezyVet /v1 pattern.)
+- aid: ezyvet:ezyvet-consultations-api
+  name: ezyVet Consultations (Clinical) API
+  tags:
+  - Consultations
+  - Clinical
+  - Health Records
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Access clinical consultations - the visit-level clinical records that
+    tie an animal, contact, and presenting problem to history, diagnoses, and
+    treatment. Includes related clinical resources such as health status and
+    presenting problems. (Resource category confirmed; paths modeled on the /v1 pattern.)
+- aid: ezyvet:ezyvet-invoices-api
+  name: ezyVet Invoices (Billing) API
+  tags:
+  - Invoices
+  - Billing
+  - Payments
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Read and manage invoices, invoice lines, and payments for services and
+    products billed to clients, including payment methods and financial totals.
+    (Billing and Payments category confirmed; paths modeled on the /v1 pattern.)
+- aid: ezyvet:ezyvet-products-api
+  name: ezyVet Products (Inventory) API
+  tags:
+  - Products
+  - Inventory
+  - Catalog
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Browse and manage the product and inventory catalog - billable products,
+    services, and stock items - along with product groups and pricing used across
+    invoicing and clinical workflows. (Inventory Management category confirmed; paths
+    modeled on the /v1 pattern.)
+- aid: ezyvet:ezyvet-diagnostics-api
+  name: ezyVet Diagnostics API
+  tags:
+  - Diagnostics
+  - Lab Results
+  - Integrations
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/docs/v1/integrations/diagnostic/
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/docs/v1/integrations/diagnostic/
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Diagnostic request and result resources powering ezyVet's Standard
+    Diagnostic Integration, letting laboratory and imaging partners push results back
+    against a patient's clinical record over a RESTful, OAuth 2.0 Client Credentials
+    interface. (Diagnostic integration confirmed from ezyVet developer docs.)
+- aid: ezyvet:ezyvet-prescriptions-api
+  name: ezyVet Prescriptions and Vaccinations API
+  tags:
+  - Prescriptions
+  - Vaccinations
+  - Pharmacy
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.ezyvet.com/guides/external-pharmacy.html
+  baseURL: https://api.ezyvet.com
+  properties:
+  - url: https://developers.ezyvet.com/guides/external-pharmacy.html
+    type: Documentation
+  - url: openapi/ezyvet-openapi.yml
+    type: OpenAPI
+  description: Manage prescriptions (including a v2 prescription resource and external
+    Rx flows for pharmacy partners) and vaccination records with POST and PATCH
+    support. Prescription v2 GET and external-prescription/vaccination write endpoints
+    are referenced in ezyVet developer docs; remaining paths modeled on the /v1 pattern.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/ezyvet
+- type: Website
+  url: https://www.ezyvet.com
+- type: Documentation
+  url: https://developers.ezyvet.com/docs/v1/
+- type: Plans
+  url: plans/ezyvet-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/ezyvet-rate-limits.yml
+- type: FinOps
+  url: finops/ezyvet-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,245 @@
+{
+  "info": {
+    "name": "ezyVet API",
+    "description": "RESTful API for ezyVet cloud veterinary practice information management software (PIMS), an IDEXX company. Base URL: https://api.ezyvet.com (production) or https://api.trial.ezyvet.com (trial). Access is partner-gated - apply for an integration to receive partner_id and client credentials. Authentication is OAuth 2.0 Client Credentials: POST /v1/oauth/access_token returns a bearer token with a 12-hour TTL. The full API spans ~216 endpoints; this collection covers a representative subset. CONFIRMED endpoints: OAuth token, /v1/contact CRUD, /v2/prescription GET, and the Standard Diagnostic Integration. Other resource paths are MODELED on ezyVet's documented /v1/{resource} REST pattern - verify against the official partner Postman collection.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      { "key": "token", "value": "{{accessToken}}", "type": "string" }
+    ]
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://api.ezyvet.com", "type": "string" },
+    { "key": "partnerId", "value": "", "type": "string" },
+    { "key": "clientId", "value": "", "type": "string" },
+    { "key": "clientSecret", "value": "", "type": "string" },
+    { "key": "accessToken", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Obtain access token (OAuth 2.0 Client Credentials)",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                { "key": "partner_id", "value": "{{partnerId}}" },
+                { "key": "client_id", "value": "{{clientId}}" },
+                { "key": "client_secret", "value": "{{clientSecret}}" },
+                { "key": "grant_type", "value": "client_credentials" },
+                { "key": "scope", "value": "read write" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/v1/oauth/access_token", "host": ["{{baseUrl}}"], "path": ["v1", "oauth", "access_token"] },
+            "description": "CONFIRMED. Exchange partner and client credentials for a 12-hour bearer token."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Animals (Patients)",
+      "item": [
+        {
+          "name": "List animals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/animal?limit=10&page=1", "host": ["{{baseUrl}}"], "path": ["v1", "animal"], "query": [{ "key": "limit", "value": "10" }, { "key": "page", "value": "1" }] },
+            "description": "MODELED on the /v1/{resource} pattern."
+          }
+        },
+        {
+          "name": "Create animal",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Rex\",\n  \"species_id\": 1,\n  \"contact_id\": 123\n}" },
+            "url": { "raw": "{{baseUrl}}/v1/animal", "host": ["{{baseUrl}}"], "path": ["v1", "animal"] },
+            "description": "MODELED."
+          }
+        },
+        {
+          "name": "Retrieve animal",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/animal/:id", "host": ["{{baseUrl}}"], "path": ["v1", "animal", ":id"], "variable": [{ "key": "id", "value": "1" }] },
+            "description": "MODELED."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Contacts (Clients)",
+      "item": [
+        {
+          "name": "List contacts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/contact?limit=10&page=1", "host": ["{{baseUrl}}"], "path": ["v1", "contact"], "query": [{ "key": "limit", "value": "10" }, { "key": "page", "value": "1" }] },
+            "description": "CONFIRMED. Lists contacts (clients, businesses, vendors, staff)."
+          }
+        },
+        {
+          "name": "Create contact",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"first_name\": \"Jane\",\n  \"last_name\": \"Doe\",\n  \"is_customer\": true\n}" },
+            "url": { "raw": "{{baseUrl}}/v1/contact", "host": ["{{baseUrl}}"], "path": ["v1", "contact"] },
+            "description": "CONFIRMED."
+          }
+        },
+        {
+          "name": "Update contact",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"last_name\": \"Smith\"\n}" },
+            "url": { "raw": "{{baseUrl}}/v1/contact/:id", "host": ["{{baseUrl}}"], "path": ["v1", "contact", ":id"], "variable": [{ "key": "id", "value": "123" }] },
+            "description": "CONFIRMED."
+          }
+        },
+        {
+          "name": "Delete contact",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/contact/:id", "host": ["{{baseUrl}}"], "path": ["v1", "contact", ":id"], "variable": [{ "key": "id", "value": "123" }] },
+            "description": "CONFIRMED."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "List appointments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/appointment?limit=10&page=1", "host": ["{{baseUrl}}"], "path": ["v1", "appointment"], "query": [{ "key": "limit", "value": "10" }, { "key": "page", "value": "1" }] },
+            "description": "MODELED."
+          }
+        },
+        {
+          "name": "List appointment types",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/appointmenttype", "host": ["{{baseUrl}}"], "path": ["v1", "appointmenttype"] },
+            "description": "MODELED (reference resource)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Consultations (Clinical)",
+      "item": [
+        {
+          "name": "List consultations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/consult?limit=10&page=1", "host": ["{{baseUrl}}"], "path": ["v1", "consult"], "query": [{ "key": "limit", "value": "10" }, { "key": "page", "value": "1" }] },
+            "description": "MODELED."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Invoices (Billing)",
+      "item": [
+        {
+          "name": "List invoices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/invoice?limit=10&page=1", "host": ["{{baseUrl}}"], "path": ["v1", "invoice"], "query": [{ "key": "limit", "value": "10" }, { "key": "page", "value": "1" }] },
+            "description": "MODELED."
+          }
+        },
+        {
+          "name": "List payments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/payment", "host": ["{{baseUrl}}"], "path": ["v1", "payment"] },
+            "description": "MODELED."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products (Inventory)",
+      "item": [
+        {
+          "name": "List products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/product?limit=10&page=1", "host": ["{{baseUrl}}"], "path": ["v1", "product"], "query": [{ "key": "limit", "value": "10" }, { "key": "page", "value": "1" }] },
+            "description": "MODELED."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Diagnostics",
+      "item": [
+        {
+          "name": "List diagnostic results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v1/diagnosticresult", "host": ["{{baseUrl}}"], "path": ["v1", "diagnosticresult"] },
+            "description": "CONFIRMED integration (Standard Diagnostic Integration)."
+          }
+        },
+        {
+          "name": "Push diagnostic result",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"diagnosticrequest_id\": 1,\n  \"result\": \"...\"\n}" },
+            "url": { "raw": "{{baseUrl}}/v1/diagnosticresult", "host": ["{{baseUrl}}"], "path": ["v1", "diagnosticresult"] },
+            "description": "CONFIRMED integration. Lab/imaging partners POST results back via the Standard Diagnostic Integration."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prescriptions and Vaccinations",
+      "item": [
+        {
+          "name": "List prescriptions (v2)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/v2/prescription", "host": ["{{baseUrl}}"], "path": ["v2", "prescription"] },
+            "description": "CONFIRMED. v2 prescription GET is recommended over v1."
+          }
+        },
+        {
+          "name": "Create vaccination",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"animal_id\": 1,\n  \"product_id\": 10\n}" },
+            "url": { "raw": "{{baseUrl}}/v1/vaccination", "host": ["{{baseUrl}}"], "path": ["v1", "vaccination"] },
+            "description": "Referenced in developer docs (POST/PATCH supported)."
+          }
+        }
+      ]
+    }
+  ]
+}

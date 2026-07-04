@@ -1,0 +1,128 @@
+aid: ezyvet
+name: ezyVet
+review:
+  question: Does ezyVet expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. ezyVet's documented API surface is
+    request/response REST over HTTPS (base https://api.ezyvet.com). No
+    server-push transport - neither WebSocket nor Server-Sent Events - is
+    documented on the ezyVet API as of the review date, so there is no
+    event-driven or streaming channel to model. Integrations poll the REST
+    endpoints (with pagination and rate-limit headers) rather than subscribing
+    to a stream.
+findings:
+  summary: |
+    ezyVet does not publish a documented public WebSocket API. ezyVet is
+    cloud-based veterinary practice information management software (PIMS),
+    founded in New Zealand in 2006 and acquired by IDEXX Laboratories in June
+    2021 (the acquisition also included Vet Radar). It exposes a RESTful API of
+    roughly 216 endpoints over HTTPS at https://api.ezyvet.com (trial at
+    https://api.trial.ezyvet.com), authenticated with OAuth 2.0 Client
+    Credentials: POST /v1/oauth/access_token returns a bearer token with a
+    12-hour TTL. Access is partner-gated - a developer must apply for an
+    integration and receive an approved partner_id plus client_id/client_secret -
+    but the endpoint catalog, best-practice guides, and a full Postman collection
+    (all 216 endpoints) are publicly documented at developers.ezyvet.com. The API
+    is pure request/response REST; the only realtime-ish surface is the Standard
+    Diagnostic Integration, where lab/imaging partners POST results back over the
+    same RESTful OAuth interface (not a WebSocket). No ws:// or wss:// endpoint is
+    documented anywhere in ezyVet's developer materials.
+  ownership: |
+    ezyVet is owned by IDEXX Laboratories, Inc., which acquired it in June 2021.
+    It sits alongside IDEXX's Cornerstone and Neo PIMS products.
+  accessModel: |
+    Partner-gated but publicly documented. The developer portal
+    (developers.ezyvet.com) openly publishes the endpoint catalog, guides, and a
+    Postman collection, but live API access requires an approved integration
+    application and issued client credentials tied to a practice database.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.ezyvet.com
+      documented: true
+      note: ~216 endpoints; OAuth 2.0 Client Credentials bearer auth. Trial base https://api.trial.ezyvet.com.
+    - protocol: Webhook / Callback
+      scheme: https
+      documented: partial
+      note: Standard Diagnostic Integration - lab/imaging partners POST results back to ezyVet over REST. Server-to-endpoint HTTP, not WebSocket.
+    - protocol: SSE
+      scheme: https
+      documented: false
+      note: No Server-Sent Events stream is documented on the ezyVet API.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in ezyVet's developer materials as of the review date.
+  endpointsConfirmed:
+    - POST   https://api.ezyvet.com/v1/oauth/access_token
+    - GET    https://api.ezyvet.com/v1/contact
+    - POST   https://api.ezyvet.com/v1/contact
+    - PATCH  https://api.ezyvet.com/v1/contact/{id}
+    - DELETE https://api.ezyvet.com/v1/contact/{id}
+    - GET    https://api.ezyvet.com/v2/prescription
+  endpointsModeled:
+    - GET/POST         https://api.ezyvet.com/v1/animal
+    - GET/PATCH/DELETE https://api.ezyvet.com/v1/animal/{id}
+    - GET              https://api.ezyvet.com/v1/species
+    - GET              https://api.ezyvet.com/v1/breed
+    - GET              https://api.ezyvet.com/v1/address
+    - GET/POST         https://api.ezyvet.com/v1/appointment
+    - GET/PATCH        https://api.ezyvet.com/v1/appointment/{id}
+    - GET              https://api.ezyvet.com/v1/appointmenttype
+    - GET              https://api.ezyvet.com/v1/appointmentstatus
+    - GET/POST         https://api.ezyvet.com/v1/consult
+    - GET/PATCH        https://api.ezyvet.com/v1/consult/{id}
+    - GET              https://api.ezyvet.com/v1/healthstatus
+    - GET/POST         https://api.ezyvet.com/v1/invoice
+    - GET/PATCH        https://api.ezyvet.com/v1/invoice/{id}
+    - GET              https://api.ezyvet.com/v1/invoiceline
+    - GET/POST         https://api.ezyvet.com/v1/payment
+    - GET/POST         https://api.ezyvet.com/v1/product
+    - GET/PATCH        https://api.ezyvet.com/v1/product/{id}
+    - GET              https://api.ezyvet.com/v1/productgroup
+    - GET              https://api.ezyvet.com/v1/diagnostic
+    - GET/POST         https://api.ezyvet.com/v1/diagnosticrequest
+    - GET/POST         https://api.ezyvet.com/v1/diagnosticresult
+    - GET/POST         https://api.ezyvet.com/v1/prescription
+    - GET/POST         https://api.ezyvet.com/v1/vaccination
+  modelingNote: |
+    The endpointsModeled list reflects ezyVet's documented resource categories
+    (Animal, Appointment, Billing & Payments, Clinical, Contact, Inventory,
+    Prescription, Wellness, System Admin) projected onto ezyVet's documented
+    /v1/{resource} REST convention. Exact paths, verbs, and operationIds should
+    be verified against the partner Postman collection; the /v1/contact CRUD set,
+    the OAuth token endpoint, /v2/prescription GET, and the Standard Diagnostic
+    Integration are directly confirmed from developer docs.
+sources:
+  - url: https://developers.ezyvet.com/
+    type: Documentation
+    note: Developer portal - ~216 endpoints, Postman collection, OAuth 2.0 Client Credentials, base URLs, rate limits.
+  - url: https://developers.ezyvet.com/docs/v1/
+    type: APIReference
+    note: v1 API documentation and endpoint catalog. All REST; no WebSocket.
+  - url: https://developers.ezyvet.com/docs/v1/integrations/diagnostic/
+    type: Documentation
+    note: Standard Diagnostic Integration - RESTful, OAuth 2.0 Client Credentials, bearer tokens.
+  - url: https://developers.ezyvet.com/guides/external-pharmacy.html
+    type: Documentation
+    note: External Rx management guide; external prescription and prescription v2 endpoints.
+  - url: https://www.ezyvet.com/build-a-custom-integration
+    type: Documentation
+    note: Partner-gated integration application / access model.
+  - url: https://www.prnewswire.com/news-releases/idexx-acquires-ezyvet-301304524.html
+    type: PressRelease
+    note: IDEXX acquired ezyVet, June 2021 (includes Vet Radar).
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and ezyVet's documented API is
+    request/response REST (OAuth 2.0 Client Credentials, ~216 endpoints). No SSE
+    or other server-push transport is documented either, so no AsyncAPI document
+    was created - there is no streaming channel on ezyVet's own API to model. The
+    Standard Diagnostic Integration is partner-to-ezyVet REST callbacks, not a
+    subscribable stream.

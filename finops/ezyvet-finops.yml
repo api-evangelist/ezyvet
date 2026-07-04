@@ -1,0 +1,95 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: ezyVet
+providerId: ezyvet
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- Veterinary
+- Practice Management
+- PIMS
+- IDEXX
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of ezyVet spend. ezyVet (an IDEXX company) is billed as a
+  per-practice SaaS subscription rather than a metered API. The dominant cost is
+  the recurring subscription quoted per practice, scaling with clinic size, user
+  / veterinarian count, and modules. The API itself carries no separate per-call
+  charge - it is included with the subscription and governed by rate limits, not
+  by metered billing - so API cost management is about staying within throttle
+  ceilings and building efficient integrations rather than optimizing a usage
+  bill. Enterprise / corporate-group agreements are negotiated.
+notes: >-
+  ezyVet publishes no public price list; subscription rates are quoted. There is
+  no usage-based API meter to reconcile against a FOCUS billing export. Track
+  spend as a fixed SaaS subscription line plus any integration/partner or
+  third-party middleware costs.
+sources:
+- https://www.ezyvet.com
+- https://www.ezyvet.com/build-a-custom-integration
+- https://developers.ezyvet.com/docs/v1/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: ezyVet (IDEXX)
+serviceCategory: Veterinary Practice Management Software
+billingModel:
+  pricingCategory: Subscription
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: ezyVet
+  ServiceCategory: Veterinary Practice Management Software
+  ProviderName: ezyVet
+  PublisherName: IDEXX Laboratories
+  InvoiceIssuerName: ezyVet
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Subscription
+meters:
+- name: practice_subscription
+  description: Recurring per-practice ezyVet subscription fee.
+  unit: practice
+  aggregation: sum
+  dimensions:
+  - practice
+  - region
+- name: user_seats
+  description: User / veterinarian seats influencing subscription tier.
+  unit: users
+  aggregation: max
+  dimensions:
+  - practice
+- name: api_calls
+  description: >-
+    API request volume. Not billed - included with the subscription and governed
+    by rate limits - but worth tracking to stay under the ~60/min per-endpoint
+    and ~180/min global throttle.
+  unit: requests
+  aggregation: sum
+  dimensions:
+  - practice
+  - partner
+principles:
+- name: Visibility
+  description: Track the ezyVet subscription as a fixed SaaS line per practice; monitor API request volume against rate-limit ceilings even though it is not billed.
+- name: Allocation
+  description: Map each practice subscription to its clinic / cost center; attribute integration effort to the partner or team that owns it.
+- name: Optimization
+  description: Right-size the subscription to actual user count and modules; build integrations that batch and cache to stay within rate limits and avoid 429s rather than over-provisioning workarounds.
+- name: Accountability
+  description: Assign an owner per practice subscription and per integration; review subscription renewals and integration health on a regular cadence.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

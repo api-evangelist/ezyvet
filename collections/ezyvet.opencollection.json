@@ -1,0 +1,171 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ezyVet API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{accessToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": { "name": "Authentication", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "Obtain access token (OAuth 2.0 Client Credentials).", "type": "http" },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/oauth/access_token",
+            "auth": { "type": "none" },
+            "body": {
+              "type": "form",
+              "data": "partner_id={{partnerId}}&client_id={{clientId}}&client_secret={{clientSecret}}&grant_type=client_credentials&scope=read write"
+            }
+          },
+          "docs": "CONFIRMED. Exchange partner and client credentials for a bearer token with a 12-hour TTL."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Animals (Patients)", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List animals.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/animal" },
+          "docs": "MODELED on the /v1/{resource} pattern. Paginate via limit and page."
+        },
+        {
+          "info": { "name": "Create an animal.", "type": "http" },
+          "http": { "method": "POST", "url": "https://api.ezyvet.com/v1/animal", "body": { "type": "json", "data": "{}" } },
+          "docs": "MODELED."
+        },
+        {
+          "info": { "name": "Retrieve an animal.", "type": "http" },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/animal/:id",
+            "params": [{ "name": "id", "value": "", "type": "path", "description": "Animal ID." }]
+          },
+          "docs": "MODELED."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Contacts (Clients)", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List contacts.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/contact" },
+          "docs": "CONFIRMED. Lists contacts (clients, businesses, vendors, staff)."
+        },
+        {
+          "info": { "name": "Create a contact.", "type": "http" },
+          "http": { "method": "POST", "url": "https://api.ezyvet.com/v1/contact", "body": { "type": "json", "data": "{}" } },
+          "docs": "CONFIRMED."
+        },
+        {
+          "info": { "name": "Update a contact.", "type": "http" },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ezyvet.com/v1/contact/:id",
+            "params": [{ "name": "id", "value": "", "type": "path", "description": "Contact ID." }],
+            "body": { "type": "json", "data": "{}" }
+          },
+          "docs": "CONFIRMED."
+        },
+        {
+          "info": { "name": "Delete a contact.", "type": "http" },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ezyvet.com/v1/contact/:id",
+            "params": [{ "name": "id", "value": "", "type": "path", "description": "Contact ID." }]
+          },
+          "docs": "CONFIRMED."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Appointments", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List appointments.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/appointment" },
+          "docs": "MODELED."
+        },
+        {
+          "info": { "name": "List appointment types.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/appointmenttype" },
+          "docs": "MODELED (reference resource)."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Consultations (Clinical)", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List consultations.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/consult" },
+          "docs": "MODELED."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Invoices (Billing)", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List invoices.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/invoice" },
+          "docs": "MODELED."
+        },
+        {
+          "info": { "name": "List payments.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/payment" },
+          "docs": "MODELED."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Products (Inventory)", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List products.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/product" },
+          "docs": "MODELED."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Diagnostics", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List diagnostic results.", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v1/diagnosticresult" },
+          "docs": "CONFIRMED integration (Standard Diagnostic Integration)."
+        },
+        {
+          "info": { "name": "Push a diagnostic result.", "type": "http" },
+          "http": { "method": "POST", "url": "https://api.ezyvet.com/v1/diagnosticresult", "body": { "type": "json", "data": "{}" } },
+          "docs": "CONFIRMED integration. Lab/imaging partners POST results back to a patient's record."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Prescriptions and Vaccinations", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List prescriptions (v2).", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.ezyvet.com/v2/prescription" },
+          "docs": "CONFIRMED. v2 prescription GET, recommended over v1."
+        },
+        {
+          "info": { "name": "Create a vaccination.", "type": "http" },
+          "http": { "method": "POST", "url": "https://api.ezyvet.com/v1/vaccination", "body": { "type": "json", "data": "{}" } },
+          "docs": "Referenced in developer docs (POST/PATCH supported)."
+        }
+      ]
+    }
+  ]
+}

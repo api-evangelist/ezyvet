@@ -1,0 +1,107 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: ezyVet
+providerId: ezyvet
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- Veterinary
+- Practice Management
+- PIMS
+- IDEXX
+- Plans
+description: >-
+  ezyVet is sold as a per-practice SaaS subscription for veterinary clinics,
+  specialty, and emergency hospitals, not as a metered public API product. ezyVet
+  does not publish standard list prices; subscription pricing is quoted per
+  practice based on clinic size, number of full-time-equivalent veterinarians /
+  users, modules, and region, and is arranged through ezyVet (an IDEXX company)
+  sales. The API is included with an ezyVet subscription and is not separately
+  metered or billed - however, developer/partner API access is gated behind an
+  integration application and approval process. There is no self-serve, pay-as-you-go
+  API tier. Exact subscription rates are not reconciled here.
+notes: >-
+  ezyVet publishes no public price list; figures below are structural, not
+  quoted. Verify current subscription pricing and any partner/integration fees
+  with ezyVet sales. The API carries no separate per-call charge; usage is
+  governed by rate limits rather than metered billing.
+sources:
+- https://www.ezyvet.com
+- https://www.ezyvet.com/build-a-custom-integration
+- https://developers.ezyvet.com/docs/v1/
+plans:
+- id: ezyvet-subscription
+  name: ezyVet Subscription (Per Practice)
+  type: subscription
+  description: >-
+    Cloud PIMS subscription quoted per practice. Pricing scales with practice
+    size, user / veterinarian count, and modules. Includes access to the ezyVet
+    API for integrations at no separate per-call fee. Contact ezyVet for a quote.
+  entries:
+  - label: Per-Practice Subscription
+    name: practice_subscription
+    type: subscription
+    metric: practice
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: quote-based (contact ezyVet sales)
+    userMultiplied: true
+  elements:
+  - name: Cloud PIMS
+  - name: Patient and Client Records
+  - name: Scheduling and Consultations
+  - name: Billing and Inventory
+  - name: Diagnostic Integrations
+  - name: API Access (included)
+- id: ezyvet-partner-integration
+  name: Partner / Developer API Access
+  type: partner
+  description: >-
+    Gated developer access to the ezyVet API for building integrations. Requires
+    an integration application and issued partner_id plus client credentials.
+    Available to ezyVet customers and approved integration partners; the endpoint
+    catalog and Postman collection are publicly documented.
+  entries:
+  - label: API Access
+    name: api_access
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: included with subscription; partner approval required
+    userMultiplied: false
+  elements:
+  - name: OAuth 2.0 Client Credentials
+  - name: ~216 REST Endpoints
+  - name: Standard Diagnostic Integration
+  - name: Postman Collection
+- id: ezyvet-enterprise
+  name: Enterprise / Corporate Groups
+  type: enterprise
+  description: >-
+    Custom arrangements for corporate veterinary groups and multi-site
+    organizations, with negotiated terms, onboarding, and support. Contact ezyVet.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Multi-Site Management
+  - name: Custom Onboarding
+  - name: Dedicated Support
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
