@@ -190,6 +190,12 @@ apis:
     support. Prescription v2 GET and external-prescription/vaccination write endpoints
     are referenced in ezyVet developer docs; remaining paths modeled on the /v1 pattern.
 common:
+- type: VulnerabilityDisclosure
+  url: security/ezyvet-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/ezyvet-domain-security.yml
+- type: Authentication
+  url: authentication/ezyvet-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/ezyvet
 - type: Website
