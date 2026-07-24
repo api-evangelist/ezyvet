@@ -1,0 +1,192 @@
+openapi: 3.0.3
+info:
+  title: ezyVet Animals Appointments API
+  description: 'The ezyVet API is a RESTful interface to ezyVet, cloud-based veterinary practice information management software (PIMS). ezyVet was founded in New Zealand in 2006 and acquired by IDEXX Laboratories in June 2021, alongside IDEXX''s Cornerstone and Neo PIMS (the acquisition also included Vet Radar).
+
+    The full API spans roughly 216 endpoints across animals/patients, contacts/clients, appointments, consultations, invoices, products, and diagnostics. Access is partner-gated: a developer must apply for an integration and receive an approved partner_id plus client_id/client_secret, then obtain a bearer token via the OAuth 2.0 Client Credentials grant. Tokens have a 12-hour TTL.
+
+    GROUNDING NOTE: The OAuth token endpoint, the /v1/contact CRUD endpoints, the Standard Diagnostic Integration, and the base/rate-limit behavior below are confirmed from ezyVet''s public developer documentation (developers.ezyvet.com). The remaining resource paths (animal, appointment, consult, invoice, product, diagnostic, prescription, vaccination and their reference resources) are MODELED on ezyVet''s documented /v1/{resource} REST pattern and published resource categories - operationId or path names may differ from the exact ezyVet catalog. Consult the partner Postman collection for authoritative request/response shapes.'
+  version: '1.0'
+  contact:
+    name: ezyVet Developer Portal
+    url: https://developers.ezyvet.com/docs/v1/
+  x-ownership: ezyVet is owned by IDEXX Laboratories, Inc. (acquired June 2021).
+servers:
+- url: https://api.ezyvet.com
+  description: Production
+- url: https://api.trial.ezyvet.com
+  description: Trial / sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Appointments
+  description: Appointments, types, and statuses. (Modeled.)
+paths:
+  /v1/appointment:
+    get:
+      operationId: listAppointments
+      tags:
+      - Appointments
+      summary: List appointments
+      description: Lists appointments; filter by date range, resource, or status. (Modeled.)
+      parameters:
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createAppointment
+      tags:
+      - Appointments
+      summary: Create an appointment
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/appointment/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getAppointment
+      tags:
+      - Appointments
+      summary: Retrieve an appointment
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAppointment
+      tags:
+      - Appointments
+      summary: Update an appointment
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/appointmenttype:
+    get:
+      operationId: listAppointmentTypes
+      tags:
+      - Appointments
+      summary: List appointment types (reference)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/appointmentstatus:
+    get:
+      operationId: listAppointmentStatuses
+      tags:
+      - Appointments
+      summary: List appointment statuses (reference)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+components:
+  responses:
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ListResponse:
+      description: A paginated list envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListEnvelope'
+    ItemResponse:
+      description: A single resource envelope.
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+  requestBodies:
+    GenericResource:
+      required: true
+      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        messages:
+          type: array
+          items:
+            type: string
+    ListEnvelope:
+      type: object
+      description: ezyVet list responses return a meta object plus an items array whose elements wrap each resource under its type key. (Shape modeled.)
+      properties:
+        meta:
+          type: object
+          properties:
+            items:
+              type: object
+              properties:
+                total:
+                  type: integer
+                limit:
+                  type: integer
+                page:
+                  type: integer
+                pages:
+                  type: integer
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  parameters:
+    Page:
+      name: page
+      in: query
+      required: false
+      description: 1-based page number.
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      description: The numeric ID of the resource.
+      schema:
+        type: integer
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of records per page (pagination is envelope-based via the meta object).
+      schema:
+        type: integer
+        default: 10
+        maximum: 200
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Bearer access token from POST /v1/oauth/access_token (OAuth 2.0 Client Credentials). 12-hour TTL.

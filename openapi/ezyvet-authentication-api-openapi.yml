@@ -1,0 +1,126 @@
+openapi: 3.0.3
+info:
+  title: ezyVet Animals Authentication API
+  description: 'The ezyVet API is a RESTful interface to ezyVet, cloud-based veterinary practice information management software (PIMS). ezyVet was founded in New Zealand in 2006 and acquired by IDEXX Laboratories in June 2021, alongside IDEXX''s Cornerstone and Neo PIMS (the acquisition also included Vet Radar).
+
+    The full API spans roughly 216 endpoints across animals/patients, contacts/clients, appointments, consultations, invoices, products, and diagnostics. Access is partner-gated: a developer must apply for an integration and receive an approved partner_id plus client_id/client_secret, then obtain a bearer token via the OAuth 2.0 Client Credentials grant. Tokens have a 12-hour TTL.
+
+    GROUNDING NOTE: The OAuth token endpoint, the /v1/contact CRUD endpoints, the Standard Diagnostic Integration, and the base/rate-limit behavior below are confirmed from ezyVet''s public developer documentation (developers.ezyvet.com). The remaining resource paths (animal, appointment, consult, invoice, product, diagnostic, prescription, vaccination and their reference resources) are MODELED on ezyVet''s documented /v1/{resource} REST pattern and published resource categories - operationId or path names may differ from the exact ezyVet catalog. Consult the partner Postman collection for authoritative request/response shapes.'
+  version: '1.0'
+  contact:
+    name: ezyVet Developer Portal
+    url: https://developers.ezyvet.com/docs/v1/
+  x-ownership: ezyVet is owned by IDEXX Laboratories, Inc. (acquired June 2021).
+servers:
+- url: https://api.ezyvet.com
+  description: Production
+- url: https://api.trial.ezyvet.com
+  description: Trial / sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Authentication
+  description: OAuth 2.0 Client Credentials token exchange. (Confirmed.)
+paths:
+  /v1/oauth/access_token:
+    post:
+      operationId: createAccessToken
+      tags:
+      - Authentication
+      summary: Obtain an OAuth 2.0 access token
+      description: Exchange partner_id, client_id, client_secret, grant_type (client_credentials), and scope for a bearer access token. Tokens are valid for 12 hours and must be refreshed before expiry. (Confirmed endpoint.)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AccessTokenRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessTokenRequest'
+      responses:
+        '200':
+          description: An access token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessTokenResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+components:
+  responses:
+    RateLimited:
+      description: Rate limit exceeded. ezyVet throttles typically at 60 requests/minute per endpoint and 180 calls/minute per database per partner. Inspect the x-ratelimit-remaining and x-ratelimit-reset response headers.
+      headers:
+        x-ratelimit-remaining:
+          description: Requests remaining in the current window.
+          schema:
+            type: integer
+        x-ratelimit-reset:
+          description: Seconds until the window resets.
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        messages:
+          type: array
+          items:
+            type: string
+    AccessTokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          example: bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds (12 hours).
+          example: 43200
+    AccessTokenRequest:
+      type: object
+      required:
+      - partner_id
+      - client_id
+      - client_secret
+      - grant_type
+      properties:
+        partner_id:
+          type: string
+          description: The partner identifier issued to your integration.
+        client_id:
+          type: string
+        client_secret:
+          type: string
+        grant_type:
+          type: string
+          enum:
+          - client_credentials
+          default: client_credentials
+        scope:
+          type: string
+          description: Space-delimited scopes requested for the token.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Bearer access token from POST /v1/oauth/access_token (OAuth 2.0 Client Credentials). 12-hour TTL.
