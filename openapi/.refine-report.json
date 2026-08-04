@@ -1,0 +1,30 @@
+{
+  "provider": "ezyvet",
+  "sources": [
+    "ezyvet-animals-api-openapi.yml",
+    "ezyvet-appointments-api-openapi.yml",
+    "ezyvet-authentication-api-openapi.yml",
+    "ezyvet-consultations-api-openapi.yml",
+    "ezyvet-contacts-api-openapi.yml",
+    "ezyvet-diagnostics-api-openapi.yml",
+    "ezyvet-invoices-api-openapi.yml",
+    "ezyvet-prescriptions-api-openapi.yml",
+    "ezyvet-products-api-openapi.yml"
+  ],
+  "outputs": [
+    "ezyvet-animals-api-openapi.yml",
+    "ezyvet-appointments-api-openapi.yml",
+    "ezyvet-authentication-api-openapi.yml",
+    "ezyvet-consultations-api-openapi.yml",
+    "ezyvet-contacts-api-openapi.yml",
+    "ezyvet-diagnostics-api-openapi.yml",
+    "ezyvet-invoices-api-openapi.yml",
+    "ezyvet-prescriptions-api-openapi.yml",
+    "ezyvet-products-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,772 @@
+openapi: 3.0.3
+info:
+  title: ezyVet API
+  description: >-
+    The ezyVet API is a RESTful interface to ezyVet, cloud-based veterinary
+    practice information management software (PIMS). ezyVet was founded in New
+    Zealand in 2006 and acquired by IDEXX Laboratories in June 2021, alongside
+    IDEXX's Cornerstone and Neo PIMS (the acquisition also included Vet Radar).
+
+    The full API spans roughly 216 endpoints across animals/patients,
+    contacts/clients, appointments, consultations, invoices, products, and
+    diagnostics. Access is partner-gated: a developer must apply for an
+    integration and receive an approved partner_id plus client_id/client_secret,
+    then obtain a bearer token via the OAuth 2.0 Client Credentials grant. Tokens
+    have a 12-hour TTL.
+
+    GROUNDING NOTE: The OAuth token endpoint, the /v1/contact CRUD endpoints, the
+    Standard Diagnostic Integration, and the base/rate-limit behavior below are
+    confirmed from ezyVet's public developer documentation (developers.ezyvet.com).
+    The remaining resource paths (animal, appointment, consult, invoice, product,
+    diagnostic, prescription, vaccination and their reference resources) are
+    MODELED on ezyVet's documented /v1/{resource} REST pattern and published
+    resource categories - operationId or path names may differ from the exact
+    ezyVet catalog. Consult the partner Postman collection for authoritative
+    request/response shapes.
+  version: '1.0'
+  contact:
+    name: ezyVet Developer Portal
+    url: https://developers.ezyvet.com/docs/v1/
+  x-ownership: ezyVet is owned by IDEXX Laboratories, Inc. (acquired June 2021).
+servers:
+  - url: https://api.ezyvet.com
+    description: Production
+  - url: https://api.trial.ezyvet.com
+    description: Trial / sandbox
+security:
+  - bearerAuth: []
+tags:
+  - name: Authentication
+    description: OAuth 2.0 Client Credentials token exchange. (Confirmed.)
+  - name: Animals
+    description: Animal (patient) records and reference data. (Modeled.)
+  - name: Contacts
+    description: Contacts (clients / pet owners) and their details. (Confirmed CRUD.)
+  - name: Appointments
+    description: Appointments, types, and statuses. (Modeled.)
+  - name: Consultations
+    description: Clinical consultation records. (Modeled.)
+  - name: Invoices
+    description: Invoices, invoice lines, and payments. (Modeled.)
+  - name: Products
+    description: Product / inventory catalog. (Modeled.)
+  - name: Diagnostics
+    description: Diagnostic requests and results (Standard Diagnostic Integration). (Confirmed integration.)
+  - name: Prescriptions
+    description: Prescriptions and vaccinations. (Partially confirmed.)
+paths:
+  /v1/oauth/access_token:
+    post:
+      operationId: createAccessToken
+      tags:
+        - Authentication
+      summary: Obtain an OAuth 2.0 access token
+      description: >-
+        Exchange partner_id, client_id, client_secret, grant_type
+        (client_credentials), and scope for a bearer access token. Tokens are
+        valid for 12 hours and must be refreshed before expiry. (Confirmed
+        endpoint.)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AccessTokenRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessTokenRequest'
+      responses:
+        '200':
+          description: An access token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessTokenResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /v1/animal:
+    get:
+      operationId: listAnimals
+      tags: [Animals]
+      summary: List animals (patients)
+      description: Lists animal records. Filter with query parameters and paginate via meta. (Modeled.)
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Active'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+    post:
+      operationId: createAnimal
+      tags: [Animals]
+      summary: Create an animal
+      description: Creates a new animal (patient) record. (Modeled.)
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/animal/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getAnimal
+      tags: [Animals]
+      summary: Retrieve an animal
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAnimal
+      tags: [Animals]
+      summary: Update an animal
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAnimal
+      tags: [Animals]
+      summary: Delete an animal
+      responses:
+        '200':
+          $ref: '#/components/responses/DeleteResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/species:
+    get:
+      operationId: listSpecies
+      tags: [Animals]
+      summary: List species (reference)
+      description: Reference list of species used on animal records. (Modeled.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/breed:
+    get:
+      operationId: listBreeds
+      tags: [Animals]
+      summary: List breeds (reference)
+      description: Reference list of breeds. (Modeled.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/contact:
+    get:
+      operationId: listContacts
+      tags: [Contacts]
+      summary: List contacts (clients)
+      description: Lists contacts - clients, businesses, vendors, and staff. (Confirmed.)
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Active'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+    post:
+      operationId: createContact
+      tags: [Contacts]
+      summary: Create a contact
+      description: Creates a new contact. (Confirmed.)
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/contact/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getContact
+      tags: [Contacts]
+      summary: Retrieve a contact
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateContact
+      tags: [Contacts]
+      summary: Update a contact
+      description: Updates an existing contact. (Confirmed.)
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteContact
+      tags: [Contacts]
+      summary: Delete a contact
+      description: Deletes a contact. (Confirmed.)
+      responses:
+        '200':
+          $ref: '#/components/responses/DeleteResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/address:
+    get:
+      operationId: listAddresses
+      tags: [Contacts]
+      summary: List addresses (reference)
+      description: Physical and postal addresses linked to contacts. (Modeled.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/appointment:
+    get:
+      operationId: listAppointments
+      tags: [Appointments]
+      summary: List appointments
+      description: Lists appointments; filter by date range, resource, or status. (Modeled.)
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createAppointment
+      tags: [Appointments]
+      summary: Create an appointment
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/appointment/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getAppointment
+      tags: [Appointments]
+      summary: Retrieve an appointment
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAppointment
+      tags: [Appointments]
+      summary: Update an appointment
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/appointmenttype:
+    get:
+      operationId: listAppointmentTypes
+      tags: [Appointments]
+      summary: List appointment types (reference)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/appointmentstatus:
+    get:
+      operationId: listAppointmentStatuses
+      tags: [Appointments]
+      summary: List appointment statuses (reference)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/consult:
+    get:
+      operationId: listConsults
+      tags: [Consultations]
+      summary: List consultations
+      description: Lists clinical consultation records. (Modeled.)
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createConsult
+      tags: [Consultations]
+      summary: Create a consultation
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/consult/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getConsult
+      tags: [Consultations]
+      summary: Retrieve a consultation
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateConsult
+      tags: [Consultations]
+      summary: Update a consultation
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/healthstatus:
+    get:
+      operationId: listHealthStatuses
+      tags: [Consultations]
+      summary: List health statuses (reference)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/invoice:
+    get:
+      operationId: listInvoices
+      tags: [Invoices]
+      summary: List invoices
+      description: Lists invoices. (Modeled.)
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createInvoice
+      tags: [Invoices]
+      summary: Create an invoice
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/invoice/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getInvoice
+      tags: [Invoices]
+      summary: Retrieve an invoice
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateInvoice
+      tags: [Invoices]
+      summary: Update an invoice
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/invoiceline:
+    get:
+      operationId: listInvoiceLines
+      tags: [Invoices]
+      summary: List invoice lines
+      description: Lists line items on invoices. (Modeled.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/payment:
+    get:
+      operationId: listPayments
+      tags: [Invoices]
+      summary: List payments
+      description: Lists payments recorded against invoices. (Modeled.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createPayment
+      tags: [Invoices]
+      summary: Create a payment
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/product:
+    get:
+      operationId: listProducts
+      tags: [Products]
+      summary: List products
+      description: Lists billable products, services, and inventory items. (Modeled.)
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Active'
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createProduct
+      tags: [Products]
+      summary: Create a product
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/product/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      operationId: getProduct
+      tags: [Products]
+      summary: Retrieve a product
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateProduct
+      tags: [Products]
+      summary: Update a product
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/productgroup:
+    get:
+      operationId: listProductGroups
+      tags: [Products]
+      summary: List product groups (reference)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/diagnostic:
+    get:
+      operationId: listDiagnostics
+      tags: [Diagnostics]
+      summary: List diagnostics
+      description: Lists diagnostic definitions. Part of the Standard Diagnostic Integration. (Confirmed integration.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/diagnosticrequest:
+    get:
+      operationId: listDiagnosticRequests
+      tags: [Diagnostics]
+      summary: List diagnostic requests
+      description: Lists diagnostic (lab / imaging) requests raised on consultations. (Modeled from integration.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createDiagnosticRequest
+      tags: [Diagnostics]
+      summary: Create a diagnostic request
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/diagnosticresult:
+    get:
+      operationId: listDiagnosticResults
+      tags: [Diagnostics]
+      summary: List diagnostic results
+      description: Lists diagnostic results returned by lab / imaging partners. (Confirmed integration.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createDiagnosticResult
+      tags: [Diagnostics]
+      summary: Push a diagnostic result
+      description: >-
+        Diagnostic partners push results back against a patient's record via the
+        Standard Diagnostic Integration (RESTful, OAuth 2.0 Client Credentials).
+        (Confirmed integration.)
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/prescription:
+    get:
+      operationId: listPrescriptions
+      tags: [Prescriptions]
+      summary: List prescriptions
+      description: Lists prescriptions. A v2 prescription resource exists; v2 is recommended going forward. (Partially confirmed.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createPrescription
+      tags: [Prescriptions]
+      summary: Create a prescription
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v2/prescription:
+    get:
+      operationId: listPrescriptionsV2
+      tags: [Prescriptions]
+      summary: List prescriptions (v2)
+      description: v2 prescription resource with a GET endpoint; recommended over v1. (Referenced in developer docs.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+  /v1/vaccination:
+    get:
+      operationId: listVaccinations
+      tags: [Prescriptions]
+      summary: List vaccinations
+      description: Lists vaccination records. (Referenced in developer docs; POST/PATCH supported.)
+      responses:
+        '200':
+          $ref: '#/components/responses/ListResponse'
+    post:
+      operationId: createVaccination
+      tags: [Prescriptions]
+      summary: Create a vaccination
+      requestBody:
+        $ref: '#/components/requestBodies/GenericResource'
+      responses:
+        '200':
+          $ref: '#/components/responses/ItemResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: >-
+        Bearer access token from POST /v1/oauth/access_token (OAuth 2.0 Client
+        Credentials). 12-hour TTL.
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      description: The numeric ID of the resource.
+      schema:
+        type: integer
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of records per page (pagination is envelope-based via the meta object).
+      schema:
+        type: integer
+        default: 10
+        maximum: 200
+    Page:
+      name: page
+      in: query
+      required: false
+      description: 1-based page number.
+      schema:
+        type: integer
+        default: 1
+    Active:
+      name: active
+      in: query
+      required: false
+      description: Filter by active status where the resource supports it.
+      schema:
+        type: boolean
+  requestBodies:
+    GenericResource:
+      required: true
+      description: >-
+        Resource payload. ezyVet write bodies are resource-specific; consult the
+        partner Postman collection for exact field lists. (Modeled as a free-form
+        object here.)
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+  responses:
+    ListResponse:
+      description: A paginated list envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListEnvelope'
+    ItemResponse:
+      description: A single resource envelope.
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+    DeleteResponse:
+      description: Deletion acknowledgement.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+    Unauthorized:
+      description: Missing or invalid bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: >-
+        Rate limit exceeded. ezyVet throttles typically at 60 requests/minute per
+        endpoint and 180 calls/minute per database per partner. Inspect the
+        x-ratelimit-remaining and x-ratelimit-reset response headers.
+      headers:
+        x-ratelimit-remaining:
+          description: Requests remaining in the current window.
+          schema:
+            type: integer
+        x-ratelimit-reset:
+          description: Seconds until the window resets.
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    AccessTokenRequest:
+      type: object
+      required:
+        - partner_id
+        - client_id
+        - client_secret
+        - grant_type
+      properties:
+        partner_id:
+          type: string
+          description: The partner identifier issued to your integration.
+        client_id:
+          type: string
+        client_secret:
+          type: string
+        grant_type:
+          type: string
+          enum:
+            - client_credentials
+          default: client_credentials
+        scope:
+          type: string
+          description: Space-delimited scopes requested for the token.
+    AccessTokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          example: bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds (12 hours).
+          example: 43200
+    ListEnvelope:
+      type: object
+      description: >-
+        ezyVet list responses return a meta object plus an items array whose
+        elements wrap each resource under its type key. (Shape modeled.)
+      properties:
+        meta:
+          type: object
+          properties:
+            items:
+              type: object
+              properties:
+                total:
+                  type: integer
+                limit:
+                  type: integer
+                page:
+                  type: integer
+                pages:
+                  type: integer
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        messages:
+          type: array
+          items:
+            type: string
