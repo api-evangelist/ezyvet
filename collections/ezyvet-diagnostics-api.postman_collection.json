@@ -1,0 +1,552 @@
+{
+  "item": [
+    {
+      "id": "b09803fb-8b62-4319-a34d-aaa86c5d8da2",
+      "name": "Diagnostics",
+      "description": {
+        "content": "Diagnostic requests and results (Standard Diagnostic Integration). (Confirmed integration.)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "acfe52b8-0fde-463c-85cb-1bbc899328cb",
+          "name": "List diagnostics",
+          "request": {
+            "name": "List diagnostics",
+            "description": {
+              "content": "Lists diagnostic definitions. Part of the Standard Diagnostic Integration. (Confirmed integration.)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "diagnostic"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a448f197-bf78-4e3d-a1a2-1957f7f3f41a",
+              "name": "A paginated list envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "diagnostic"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"items\": {\n      \"total\": 9552,\n      \"limit\": 6390,\n      \"page\": 2797,\n      \"pages\": 2664\n    }\n  },\n  \"items\": [\n    {\n      \"key_0\": 4207,\n      \"key_1\": true,\n      \"key_2\": true,\n      \"key_3\": 9252.602807225816\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "217baa3b-12e1-4da8-8157-dacd123b6aa2",
+          "name": "List diagnostic requests",
+          "request": {
+            "name": "List diagnostic requests",
+            "description": {
+              "content": "Lists diagnostic (lab / imaging) requests raised on consultations. (Modeled from integration.)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "diagnosticrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab3bc4f0-65cc-4a57-8f6e-fd3fe71f3caf",
+              "name": "A paginated list envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "diagnosticrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"items\": {\n      \"total\": 3955,\n      \"limit\": 7300,\n      \"page\": 6033,\n      \"pages\": 1029\n    }\n  },\n  \"items\": [\n    {\n      \"key_0\": 5615,\n      \"key_1\": 1221\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 668.659157595245,\n      \"key_3\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d06368c-22b0-4141-8812-77f0e75044e6",
+          "name": "Create a diagnostic request",
+          "request": {
+            "name": "Create a diagnostic request",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "diagnosticrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20d8bf97-7d36-4f75-9fe9-edaebbd83269",
+              "name": "A single resource envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "diagnosticrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06781e74-4841-4f0a-86f6-158d187f73c3",
+              "name": "Request validation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "diagnosticrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"messages\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13ca9207-eaba-4c3c-86ae-8c25d9c5b3dc",
+          "name": "List diagnostic results",
+          "request": {
+            "name": "List diagnostic results",
+            "description": {
+              "content": "Lists diagnostic results returned by lab / imaging partners. (Confirmed integration.)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "diagnosticresult"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59bdd031-f5b1-413b-a5ec-e939b89cb6f4",
+              "name": "A paginated list envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "diagnosticresult"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"items\": {\n      \"total\": 3955,\n      \"limit\": 7300,\n      \"page\": 6033,\n      \"pages\": 1029\n    }\n  },\n  \"items\": [\n    {\n      \"key_0\": 5615,\n      \"key_1\": 1221\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true,\n      \"key_2\": 668.659157595245,\n      \"key_3\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "186ce2ef-5784-44af-a79b-b7372fb741b7",
+          "name": "Push a diagnostic result",
+          "request": {
+            "name": "Push a diagnostic result",
+            "description": {
+              "content": "Diagnostic partners push results back against a patient's record via the Standard Diagnostic Integration (RESTful, OAuth 2.0 Client Credentials). (Confirmed integration.)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "diagnosticresult"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f10a431b-b15b-4f8a-ae43-4e7a6913bef2",
+              "name": "A single resource envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "diagnosticresult"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10235672-d169-44a1-8197-b7f4d2de11dc",
+              "name": "Request validation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "diagnosticresult"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"messages\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.ezyvet.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e0a1906a-78f0-4ccb-ab59-457f8163cab3",
+    "name": "ezyVet Animals Diagnostics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ezyVet API is a RESTful interface to ezyVet, cloud-based veterinary practice information management software (PIMS). ezyVet was founded in New Zealand in 2006 and acquired by IDEXX Laboratories in June 2021, alongside IDEXX's Cornerstone and Neo PIMS (the acquisition also included Vet Radar).\nThe full API spans roughly 216 endpoints across animals/patients, contacts/clients, appointments, consultations, invoices, products, and diagnostics. Access is partner-gated: a developer must apply for an integration and receive an approved partner_id plus client_id/client_secret, then obtain a bearer token via the OAuth 2.0 Client Credentials grant. Tokens have a 12-hour TTL.\nGROUNDING NOTE: The OAuth token endpoint, the /v1/contact CRUD endpoints, the Standard Diagnostic Integration, and the base/rate-limit behavior below are confirmed from ezyVet's public developer documentation (developers.ezyvet.com). The remaining resource paths (animal, appointment, consult, invoice, product, diagnostic, prescription, vaccination and their reference resources) are MODELED on ezyVet's documented /v1/{resource} REST pattern and published resource categories - operationId or path names may differ from the exact ezyVet catalog. Consult the partner Postman collection for authoritative request/response shapes.\n\nContact Support:\n Name: ezyVet Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

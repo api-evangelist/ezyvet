@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ezyVet Animals Appointments API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Appointments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List appointments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/appointment",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (pagination is envelope-based via the meta object)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page number."
+              }
+            ]
+          },
+          "docs": "Lists appointments; filter by date range, resource, or status. (Modeled.)"
+        },
+        {
+          "info": {
+            "name": "Create an appointment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/appointment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an appointment"
+        },
+        {
+          "info": {
+            "name": "Retrieve an appointment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/appointment/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The numeric ID of the resource."
+              }
+            ]
+          },
+          "docs": "Retrieve an appointment"
+        },
+        {
+          "info": {
+            "name": "Update an appointment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ezyvet.com/v1/appointment/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The numeric ID of the resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an appointment"
+        },
+        {
+          "info": {
+            "name": "List appointment types (reference)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/appointmenttype"
+          },
+          "docs": "List appointment types (reference)"
+        },
+        {
+          "info": {
+            "name": "List appointment statuses (reference)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/appointmentstatus"
+          },
+          "docs": "List appointment statuses (reference)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ezyVet Animals Prescriptions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Prescriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List prescriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/prescription"
+          },
+          "docs": "Lists prescriptions. A v2 prescription resource exists; v2 is recommended going forward. (Partially confirmed.)"
+        },
+        {
+          "info": {
+            "name": "Create a prescription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/prescription",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a prescription"
+        },
+        {
+          "info": {
+            "name": "List prescriptions (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v2/prescription"
+          },
+          "docs": "v2 prescription resource with a GET endpoint; recommended over v1. (Referenced in developer docs.)"
+        },
+        {
+          "info": {
+            "name": "List vaccinations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/vaccination"
+          },
+          "docs": "Lists vaccination records. (Referenced in developer docs; POST/PATCH supported.)"
+        },
+        {
+          "info": {
+            "name": "Create a vaccination",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/vaccination",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a vaccination"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

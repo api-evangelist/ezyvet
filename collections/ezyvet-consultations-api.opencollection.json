@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ezyVet Animals Consultations API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Consultations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List consultations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/consult",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (pagination is envelope-based via the meta object)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page number."
+              }
+            ]
+          },
+          "docs": "Lists clinical consultation records. (Modeled.)"
+        },
+        {
+          "info": {
+            "name": "Create a consultation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/consult",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a consultation"
+        },
+        {
+          "info": {
+            "name": "Retrieve a consultation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/consult/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The numeric ID of the resource."
+              }
+            ]
+          },
+          "docs": "Retrieve a consultation"
+        },
+        {
+          "info": {
+            "name": "Update a consultation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ezyvet.com/v1/consult/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The numeric ID of the resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a consultation"
+        },
+        {
+          "info": {
+            "name": "List health statuses (reference)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/healthstatus"
+          },
+          "docs": "List health statuses (reference)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

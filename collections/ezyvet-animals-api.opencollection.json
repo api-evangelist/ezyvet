@@ -1,0 +1,153 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ezyVet Animals API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Animals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List animals (patients)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/animal",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page (pagination is envelope-based via the meta object)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "1-based page number."
+              },
+              {
+                "name": "active",
+                "value": "",
+                "type": "query",
+                "description": "Filter by active status where the resource supports it."
+              }
+            ]
+          },
+          "docs": "Lists animal records. Filter with query parameters and paginate via meta. (Modeled.)"
+        },
+        {
+          "info": {
+            "name": "Create an animal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/animal",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new animal (patient) record. (Modeled.)"
+        },
+        {
+          "info": {
+            "name": "Retrieve an animal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/animal/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The numeric ID of the resource."
+              }
+            ]
+          },
+          "docs": "Retrieve an animal"
+        },
+        {
+          "info": {
+            "name": "Update an animal",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.ezyvet.com/v1/animal/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The numeric ID of the resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an animal"
+        },
+        {
+          "info": {
+            "name": "Delete an animal",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.ezyvet.com/v1/animal/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The numeric ID of the resource."
+              }
+            ]
+          },
+          "docs": "Delete an animal"
+        },
+        {
+          "info": {
+            "name": "List species (reference)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/species"
+          },
+          "docs": "Reference list of species used on animal records. (Modeled.)"
+        },
+        {
+          "info": {
+            "name": "List breeds (reference)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/breed"
+          },
+          "docs": "Reference list of breeds. (Modeled.)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

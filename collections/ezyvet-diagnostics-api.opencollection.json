@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ezyVet Animals Diagnostics API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Diagnostics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List diagnostics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/diagnostic"
+          },
+          "docs": "Lists diagnostic definitions. Part of the Standard Diagnostic Integration. (Confirmed integration.)"
+        },
+        {
+          "info": {
+            "name": "List diagnostic requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/diagnosticrequest"
+          },
+          "docs": "Lists diagnostic (lab / imaging) requests raised on consultations. (Modeled from integration.)"
+        },
+        {
+          "info": {
+            "name": "Create a diagnostic request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/diagnosticrequest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a diagnostic request"
+        },
+        {
+          "info": {
+            "name": "List diagnostic results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ezyvet.com/v1/diagnosticresult"
+          },
+          "docs": "Lists diagnostic results returned by lab / imaging partners. (Confirmed integration.)"
+        },
+        {
+          "info": {
+            "name": "Push a diagnostic result",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ezyvet.com/v1/diagnosticresult",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Diagnostic partners push results back against a patient's record via the Standard Diagnostic Integration (RESTful, OAuth 2.0 Client Credentials). (Confirmed integration.)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
