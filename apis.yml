@@ -191,6 +191,8 @@ apis:
   humanURL: https://developers.ezyvet.com/docs/v1/
   baseURL: https://api.ezyvet.com
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
