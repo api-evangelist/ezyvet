@@ -1,0 +1,35 @@
+slug: ezyvet
+provider: ezyVet
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Healthcare Providers
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Appointments
+  spec_file: ezyvet-appointments-api-openapi.yml
+  capability_id: BC-2800.10
+  capability_id_l1: BC-2800
+  capability_name: Scheduling & Appointment Management
+  confidence: 0.9
+  evidence: POST /v1/appointment  createAppointment  Create an appointment; GET /v1/appointmenttype  listAppointmentTypes
+  reason: Booking, updating and typing of appointments in a practice management system is plainly appointment
+    scheduling.
+- tag: Diagnostics
+  spec_file: ezyvet-diagnostics-api-openapi.yml
+  capability_id: BC-2860.60
+  capability_id_l1: BC-2860
+  capability_name: Diagnostic Results Management
+  confidence: 0.75
+  evidence: POST /v1/diagnosticrequest  createDiagnosticRequest  Create a diagnostic request; POST /v1/diagnosticresult  createDiagnosticResult  Push
+    a diagnostic result
+  reason: Operations order diagnostics and push back diagnostic results — the classic lab/diagnostic integration
+    surface. L1 Diagnostic Services Management is clear; the results push supports the Diagnostic Results
+    Management sub-capability, though request creation also touches order entry.
