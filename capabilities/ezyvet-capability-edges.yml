@@ -11,25 +11,33 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 2
+edge_count: 3
 edges:
 - tag: Appointments
   spec_file: ezyvet-appointments-api-openapi.yml
   capability_id: BC-2800.10
   capability_id_l1: BC-2800
   capability_name: Scheduling & Appointment Management
-  confidence: 0.9
-  evidence: POST /v1/appointment  createAppointment  Create an appointment; GET /v1/appointmenttype  listAppointmentTypes
-  reason: Booking, updating and typing of appointments in a practice management system is plainly appointment
-    scheduling.
+  confidence: 0.82
+  evidence: POST /v1/appointment  createAppointment  Create an appointment; GET /v1/appointmentstatus  listAppointmentStatuses
+  reason: Appointment booking, status and type management is squarely scheduling and appointment management
+    for the practice.
 - tag: Diagnostics
   spec_file: ezyvet-diagnostics-api-openapi.yml
-  capability_id: BC-2860.60
+  capability_id: BC-2860
   capability_id_l1: BC-2860
-  capability_name: Diagnostic Results Management
-  confidence: 0.75
-  evidence: POST /v1/diagnosticrequest  createDiagnosticRequest  Create a diagnostic request; POST /v1/diagnosticresult  createDiagnosticResult  Push
+  capability_name: Diagnostic Services Management
+  confidence: 0.78
+  evidence: POST /v1/diagnosticrequest  createDiagnosticRequest; POST /v1/diagnosticresult  createDiagnosticResult  Push
     a diagnostic result
-  reason: Operations order diagnostics and push back diagnostic results — the classic lab/diagnostic integration
-    surface. L1 Diagnostic Services Management is clear; the results push supports the Diagnostic Results
-    Management sub-capability, though request creation also touches order entry.
+  reason: Diagnostic request ordering and result push (lab/diagnostic integration) is diagnostic services
+    management; spans ordering and results so L2 left unset.
+- tag: Contacts
+  spec_file: ezyvet-contacts-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.7
+  evidence: GET /v1/contact  listContacts  List contacts (clients); GET /v1/address  listAddresses
+  reason: CRUD over client (pet owner) master records with addresses — customer data management rather
+    than a clinical capability.
