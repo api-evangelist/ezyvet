@@ -1,64 +1,33 @@
-specification: API Commons Rate Limits
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
-provider: ezyVet
-providerId: ezyvet
-created: '2026-07-04'
-modified: '2026-07-04'
-reconciled: false
-tags:
-- Veterinary
-- Practice Management
-- PIMS
-- Rate Limiting
-- Quotas
-description: >-
-  ezyVet enforces request-rate limits on its API at two levels. Individual
-  endpoints are typically throttled at around 60 requests per minute, and a
-  global ceiling of roughly 180 calls per minute applies per database per
-  partner. Requests over the limit return HTTP 429. Every response carries the
-  x-ratelimit-remaining and x-ratelimit-reset headers so clients can track their
-  remaining quota and back off before being throttled. OAuth bearer tokens have a
-  12-hour TTL and must be refreshed before expiry.
-notes: >-
-  Numbers below are as documented on ezyVet's developer materials at the review
-  date and may vary by endpoint or agreement; confirm current limits with the
-  partner documentation. Well-behaved integrations should honor the rate-limit
-  headers and implement exponential backoff on 429.
+# Rate limits transcribed from the provider's own documentation — see provenance. Quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://developers.ezyvet.com/
 sources:
-- https://developers.ezyvet.com/docs/v1/
 - https://developers.ezyvet.com/
-- https://www.ezyvet.com/build-a-custom-integration
-responseCodes:
-  throttled: 429
+provenance:
+  tool: planning/api-economics/harvest_ratelimits.py
+  run: 20260920T133210
+  grounding: every limit_text was found verbatim in the fetched page text
+published: true
+note: Request Throttling section states endpoints are throttled per minute, most commonly 60 calls per
+  minute, plus a global default of 180 calls per database per Partner (rate limit period is a minute);
+  excess returns 429. Limits are per partner_id per ezyVet database.
+limit_count: 2
 limits:
-- name: Per-Endpoint Request Rate
+- name: Per-endpoint throttle
+  limit_text: 60 calls per minute
+  limit: 60
+  window: minute
   scope: endpoint
-  metric: requests
-  limit: ~60 per minute
-  notes: Endpoint-specific throttle; exact value can vary by endpoint.
-- name: Global Request Rate
-  scope: database-partner
-  metric: requests
-  limit: ~180 per minute
-  notes: Applies per practice database per partner across all endpoints.
-- name: Access Token Lifetime
-  scope: token
-  metric: seconds
-  limit: 43200 (12 hours)
-  notes: OAuth 2.0 Client Credentials bearer token TTL; refresh before expiry.
+  endpoint: most endpoints
+- name: Global rate limit
+  limit_text: 180 calls per database per Partner
+  limit: 180
+  window: minute
+  scope: account
 headers:
-- name: x-ratelimit-remaining
-  description: Requests remaining in the current rate-limit window.
-- name: x-ratelimit-reset
-  description: Time (seconds) until the current rate-limit window resets.
-policies:
-- name: Backoff Strategy
-  description: On HTTP 429, honor x-ratelimit-reset and retry with exponential backoff plus jitter.
-- name: Token Refresh
-  description: Cache the 12-hour bearer token and refresh it before expiry rather than requesting a new token per call.
-- name: Header Awareness
-  description: Read x-ratelimit-remaining on every response and throttle client-side before hitting the limit.
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+- x-ratelimit-limit
+- x-ratelimit-remaining
+- x-ratelimit-reset
+- x-item-limit-per-page
+exceeded_status: 429
