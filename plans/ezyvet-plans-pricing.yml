@@ -10,6 +10,10 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-09-20'
 published: true
 note: Single starting price stated ('Get started for as little as $260.50 per month'); additional/enterprise
   pricing available upon request via custom quote. Six-month initial term with three-month rolling contract
