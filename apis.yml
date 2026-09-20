@@ -219,6 +219,8 @@ apis:
   - type: Documentation
     url: https://developers.ezyvet.com/guides/external-pharmacy.html
 common:
+- type: Pricing
+  url: https://www.ezyvet.com/pricing/us
 - type: CapabilityMap
   url: capabilities/ezyvet-capability-edges.yml
   name: ezyVet Business Capability Map
