@@ -1,15 +1,7 @@
 {
   "provider": "ezyvet",
   "sources": [
-    "ezyvet-animals-api-openapi.yml",
-    "ezyvet-appointments-api-openapi.yml",
-    "ezyvet-authentication-api-openapi.yml",
-    "ezyvet-consultations-api-openapi.yml",
-    "ezyvet-contacts-api-openapi.yml",
-    "ezyvet-diagnostics-api-openapi.yml",
-    "ezyvet-invoices-api-openapi.yml",
-    "ezyvet-prescriptions-api-openapi.yml",
-    "ezyvet-products-api-openapi.yml"
+    "_original/ezyvet-openapi.yml"
   ],
   "outputs": [
     "ezyvet-animals-api-openapi.yml",
@@ -25,6 +17,20 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ezyvet-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ezyvet-animals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-appointments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-consultations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-diagnostics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-prescriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ezyvet-products-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
