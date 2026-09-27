@@ -102,18 +102,18 @@ paths:
           $ref: '#/components/responses/ValidationError'
 components:
   responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     ValidationError:
       description: Request validation failed.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    ListResponse:
+      description: A paginated list envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListEnvelope'
     ItemResponse:
       description: A single resource envelope.
       content:
@@ -121,22 +121,13 @@ components:
           schema:
             type: object
             additionalProperties: true
-    ListResponse:
-      description: A paginated list envelope.
+    NotFound:
+      description: Resource not found.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ListEnvelope'
+            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-        messages:
-          type: array
-          items:
-            type: string
     ListEnvelope:
       type: object
       description: ezyVet list responses return a meta object plus an items array whose elements wrap each resource under its type key. (Shape modeled.)
@@ -160,23 +151,24 @@ components:
           items:
             type: object
             additionalProperties: true
-  requestBodies:
-    GenericResource:
-      required: true
-      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
-      content:
-        application/json:
-          schema:
-            type: object
-            additionalProperties: true
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        messages:
+          type: array
+          items:
+            type: string
   parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      description: The numeric ID of the resource.
+    Page:
+      name: page
+      in: query
+      required: false
+      description: 1-based page number.
       schema:
         type: integer
+        default: 1
     Limit:
       name: limit
       in: query
@@ -186,14 +178,22 @@ components:
         type: integer
         default: 10
         maximum: 200
-    Page:
-      name: page
-      in: query
-      required: false
-      description: 1-based page number.
+    Id:
+      name: id
+      in: path
+      required: true
+      description: The numeric ID of the resource.
       schema:
         type: integer
-        default: 1
+  requestBodies:
+    GenericResource:
+      required: true
+      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http

@@ -74,12 +74,12 @@ paths:
           $ref: '#/components/responses/ValidationError'
 components:
   responses:
-    ValidationError:
-      description: Request validation failed.
+    ListResponse:
+      description: A paginated list envelope.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: '#/components/schemas/ListEnvelope'
     ItemResponse:
       description: A single resource envelope.
       content:
@@ -87,12 +87,12 @@ components:
           schema:
             type: object
             additionalProperties: true
-    ListResponse:
-      description: A paginated list envelope.
+    ValidationError:
+      description: Request validation failed.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ListEnvelope'
+            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
