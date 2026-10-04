@@ -82,18 +82,27 @@ components:
           schema:
             type: object
             additionalProperties: true
-    ListResponse:
-      description: A paginated list envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ListEnvelope'
     ValidationError:
       description: Request validation failed.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    ListResponse:
+      description: A paginated list envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListEnvelope'
+  requestBodies:
+    GenericResource:
+      required: true
+      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
   schemas:
     Error:
       type: object
@@ -125,15 +134,6 @@ components:
         items:
           type: array
           items:
-            type: object
-            additionalProperties: true
-  requestBodies:
-    GenericResource:
-      required: true
-      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
-      content:
-        application/json:
-          schema:
             type: object
             additionalProperties: true
   securitySchemes:

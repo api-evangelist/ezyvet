@@ -87,6 +87,32 @@ paths:
         '200':
           $ref: '#/components/responses/ListResponse'
 components:
+  responses:
+    ItemResponse:
+      description: A single resource envelope.
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ListResponse:
+      description: A paginated list envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListEnvelope'
   parameters:
     Limit:
       name: limit
@@ -112,32 +138,15 @@ components:
       schema:
         type: integer
         default: 1
-  responses:
-    ItemResponse:
-      description: A single resource envelope.
+  requestBodies:
+    GenericResource:
+      required: true
+      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
       content:
         application/json:
           schema:
             type: object
             additionalProperties: true
-    ListResponse:
-      description: A paginated list envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ListEnvelope'
-    ValidationError:
-      description: Request validation failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -169,15 +178,6 @@ components:
         items:
           type: array
           items:
-            type: object
-            additionalProperties: true
-  requestBodies:
-    GenericResource:
-      required: true
-      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
-      content:
-        application/json:
-          schema:
             type: object
             additionalProperties: true
   securitySchemes:

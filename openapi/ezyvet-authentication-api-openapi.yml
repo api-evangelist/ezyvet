@@ -47,38 +47,7 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  responses:
-    RateLimited:
-      description: Rate limit exceeded. ezyVet throttles typically at 60 requests/minute per endpoint and 180 calls/minute per database per partner. Inspect the x-ratelimit-remaining and x-ratelimit-reset response headers.
-      headers:
-        x-ratelimit-remaining:
-          description: Requests remaining in the current window.
-          schema:
-            type: integer
-        x-ratelimit-reset:
-          description: Seconds until the window resets.
-          schema:
-            type: integer
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid bearer token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-        messages:
-          type: array
-          items:
-            type: string
     AccessTokenRequest:
       type: object
       required:
@@ -102,6 +71,15 @@ components:
         scope:
           type: string
           description: Space-delimited scopes requested for the token.
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        messages:
+          type: array
+          items:
+            type: string
     AccessTokenResponse:
       type: object
       properties:
@@ -114,6 +92,28 @@ components:
           type: integer
           description: Token lifetime in seconds (12 hours).
           example: 43200
+  responses:
+    RateLimited:
+      description: Rate limit exceeded. ezyVet throttles typically at 60 requests/minute per endpoint and 180 calls/minute per database per partner. Inspect the x-ratelimit-remaining and x-ratelimit-reset response headers.
+      headers:
+        x-ratelimit-remaining:
+          description: Requests remaining in the current window.
+          schema:
+            type: integer
+        x-ratelimit-reset:
+          description: Seconds until the window resets.
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     bearerAuth:
       type: http

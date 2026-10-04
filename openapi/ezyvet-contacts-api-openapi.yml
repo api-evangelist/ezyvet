@@ -97,7 +97,70 @@ paths:
         '200':
           $ref: '#/components/responses/ListResponse'
 components:
+  responses:
+    ItemResponse:
+      description: A single resource envelope.
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+    RateLimited:
+      description: Rate limit exceeded. ezyVet throttles typically at 60 requests/minute per endpoint and 180 calls/minute per database per partner. Inspect the x-ratelimit-remaining and x-ratelimit-reset response headers.
+      headers:
+        x-ratelimit-remaining:
+          description: Requests remaining in the current window.
+          schema:
+            type: integer
+        x-ratelimit-reset:
+          description: Seconds until the window resets.
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ListResponse:
+      description: A paginated list envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListEnvelope'
+    DeleteResponse:
+      description: Deletion acknowledgement.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
   parameters:
+    Active:
+      name: active
+      in: query
+      required: false
+      description: Filter by active status where the resource supports it.
+      schema:
+        type: boolean
     Limit:
       name: limit
       in: query
@@ -122,69 +185,15 @@ components:
       schema:
         type: integer
         default: 1
-    Active:
-      name: active
-      in: query
-      required: false
-      description: Filter by active status where the resource supports it.
-      schema:
-        type: boolean
-  responses:
-    RateLimited:
-      description: Rate limit exceeded. ezyVet throttles typically at 60 requests/minute per endpoint and 180 calls/minute per database per partner. Inspect the x-ratelimit-remaining and x-ratelimit-reset response headers.
-      headers:
-        x-ratelimit-remaining:
-          description: Requests remaining in the current window.
-          schema:
-            type: integer
-        x-ratelimit-reset:
-          description: Seconds until the window resets.
-          schema:
-            type: integer
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ItemResponse:
-      description: A single resource envelope.
+  requestBodies:
+    GenericResource:
+      required: true
+      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
       content:
         application/json:
           schema:
             type: object
             additionalProperties: true
-    ListResponse:
-      description: A paginated list envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ListEnvelope'
-    DeleteResponse:
-      description: Deletion acknowledgement.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
-    ValidationError:
-      description: Request validation failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid bearer token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -216,15 +225,6 @@ components:
         items:
           type: array
           items:
-            type: object
-            additionalProperties: true
-  requestBodies:
-    GenericResource:
-      required: true
-      description: Resource payload. ezyVet write bodies are resource-specific; consult the partner Postman collection for exact field lists. (Modeled as a free-form object here.)
-      content:
-        application/json:
-          schema:
             type: object
             additionalProperties: true
   securitySchemes:
