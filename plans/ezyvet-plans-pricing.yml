@@ -29,3 +29,17 @@ plans:
   included_quota: Cloud-based software, comprehensive practice information capabilities, key software
     integrations, IDEXX diagnostic integrations, software improvements, unlimited 24/7 support, data hosting
   overage: Monthly pricing does not include our implementation.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units: []
+  plans:
+  - name: ezyVet
+    access: other
+    model: hybrid
+    model_how: derived
+    units: []
+    periods:
+    - month
