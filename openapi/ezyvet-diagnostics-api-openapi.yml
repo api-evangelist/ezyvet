@@ -74,26 +74,6 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 components:
-  responses:
-    ItemResponse:
-      description: A single resource envelope.
-      content:
-        application/json:
-          schema:
-            type: object
-            additionalProperties: true
-    ValidationError:
-      description: Request validation failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ListResponse:
-      description: A paginated list envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ListEnvelope'
   requestBodies:
     GenericResource:
       required: true
@@ -103,16 +83,27 @@ components:
           schema:
             type: object
             additionalProperties: true
+  responses:
+    ListResponse:
+      description: A paginated list envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListEnvelope'
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ItemResponse:
+      description: A single resource envelope.
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-        messages:
-          type: array
-          items:
-            type: string
     ListEnvelope:
       type: object
       description: ezyVet list responses return a meta object plus an items array whose elements wrap each resource under its type key. (Shape modeled.)
@@ -136,6 +127,15 @@ components:
           items:
             type: object
             additionalProperties: true
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        messages:
+          type: array
+          items:
+            type: string
   securitySchemes:
     bearerAuth:
       type: http
