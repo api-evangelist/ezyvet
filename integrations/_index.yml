@@ -16,3 +16,1303 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: ezyvet-akc-reunite
+  label: AKC Reunite
+  partner_name: AKC Reunite
+  category: Microchips
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/akc-reunite
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-allydvm
+  label: AllyDVM
+  partner_name: AllyDVM
+  category: Client Engagement, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/allydvm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-antech-in-house-diagnostics
+  label: Antech In-house Diagnostics
+  partner_name: Antech In-house Diagnostics
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/antech-diagnostics
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-antech-reference-labs
+  label: Antech Reference Labs
+  partner_name: Antech Reference Labs
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/antech-reference-lab
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-apex-healthware
+  label: Apex Healthware
+  partner_name: Apex Healthware
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/apexhealthware
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-asteris
+  label: Asteris
+  partner_name: Asteris
+  category: Digital Imaging & Interpretations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/asteris
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-atx-imaging
+  label: ATX Imaging
+  partner_name: ATX Imaging
+  category: Digital Imaging & Interpretations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/atx-imaging
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-ava
+  label: AVA
+  partner_name: AVA
+  category: AI Receptionist
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetpawer
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-awanui
+  label: Awanui
+  partner_name: Awanui
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/awanui
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-bionote
+  label: Bionote
+  partner_name: Bionote
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/bionote
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-blue-rabbit
+  label: Blue Rabbit
+  partner_name: Blue Rabbit
+  category: Online Pharmacy
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/blue-rabbit
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-carecredit
+  label: CareCredit
+  partner_name: CareCredit
+  category: Payments
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/carecredit
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-centaur-animal-health
+  label: Centaur Animal Health
+  partner_name: Centaur Animal Health
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/centaur-animal-health
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-cenvet
+  label: Cenvet
+  partner_name: Cenvet
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/cenvet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-chckvet
+  label: Chckvet
+  partner_name: Chckvet
+  category: Client Engagement, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/chckvet-2
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-clinical-universe
+  label: Clinical Universe
+  partner_name: Clinical Universe
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/clinical-universe
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-clinicwise
+  label: ClinicWise
+  partner_name: ClinicWise
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/clinicwise
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-covet
+  label: CoVet
+  partner_name: CoVet
+  category: AI Assistant
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/covet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-cubex
+  label: CUBEX
+  partner_name: CUBEX
+  category: Controlled Drug Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/cubex
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-customer-radar
+  label: Customer Radar
+  partner_name: Customer Radar
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/customerradar
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-digital-practice
+  label: Digital Practice
+  partner_name: Digital Practice
+  category: Client Engagement, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/digital-practice-2
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-dodo
+  label: Dodo
+  partner_name: Dodo
+  category: AI Receptionist
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/dodo
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-dropbox
+  label: Dropbox
+  partner_name: Dropbox
+  category: Other
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/dropbox
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-emailed-labs
+  label: Emailed Labs
+  partner_name: Emailed Labs
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/emailed-labs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-ezyvet-connect
+  label: ezyVet Connect
+  partner_name: ezyVet Connect
+  category: Mobile
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/ezyvet-connect
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-ezyvet-scan
+  label: ezyVet Scan
+  partner_name: ezyVet Scan
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/scan
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-fetchit
+  label: Fetchit
+  partner_name: Fetchit
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/fetchit
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-fortis
+  label: Fortis
+  partner_name: Fortis
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/fortis
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-gaponly
+  label: GapOnly
+  partner_name: GapOnly
+  category: Insurance
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/gaponly
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-google-maps-api
+  label: Google Maps API
+  partner_name: Google Maps API
+  category: Mobile
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/google-maps-api
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-greenline
+  label: Greenline
+  partner_name: Greenline
+  category: Other
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/greenline
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-gribbles-veterinary-pathology
+  label: Gribbles Veterinary Pathology
+  partner_name: Gribbles Veterinary Pathology
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/gribbles
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-heska
+  label: Heska
+  partner: heska
+  partner_name: Heska
+  category: Digital Imaging & Interpretations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/heska
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-idexx-reference-laboratories
+  label: IDEXX Reference Laboratories
+  partner_name: IDEXX Reference Laboratories
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-reference-lab
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-idexx-vetconnect-plus
+  label: IDEXX VetConnect PLUS
+  partner_name: IDEXX VetConnect PLUS
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-vetconnect-plus
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-idexx-vetlab-station
+  label: IDEXX VetLab Station
+  partner_name: IDEXX VetLab Station
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-vetlab-station
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-idexx-web-pacs
+  label: IDEXX Web PACS
+  partner_name: IDEXX Web PACS
+  category: Digital Imaging & Interpretations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-web-pacs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-inventory-ally
+  label: Inventory Ally
+  partner_name: Inventory Ally
+  category: Inventory Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/inventory-ally-2
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-it-guru
+  label: IT Guru
+  partner_name: IT Guru
+  category: Other
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/it-guru
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-kahuvet
+  label: Kahuvet
+  partner_name: Kahuvet
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/kahuvet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-knight-benedikt
+  label: Knight Benedikt
+  partner_name: Knight Benedikt
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/knight-benedikt
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-koala-health
+  label: Koala Health
+  partner: koala-health
+  partner_name: Koala Health
+  category: Online Pharmacy
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/koala-health
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-lyppard
+  label: Lyppard
+  partner_name: Lyppard
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/lyppard
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-masterpet
+  label: Masterpet
+  partner_name: Masterpet
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/masterpet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-microvet-diagnostics
+  label: MicroVet Diagnostics
+  partner_name: MicroVet Diagnostics
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/microvet-diagnostics
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-midwest-veterinary-lab
+  label: Midwest Veterinary Lab
+  partner_name: Midwest Veterinary Lab
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/midwest-vet-lab
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-midwest-veterinary-supply
+  label: Midwest Veterinary Supply
+  partner_name: Midwest Veterinary Supply
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/midwest-veterinary-supply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-milab
+  label: MiLab
+  partner_name: MiLab
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/milab
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-modeus-vet-s8
+  label: Modeus Vet S8
+  partner_name: Modeus Vet S8
+  category: Controlled Drug Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vet-s8
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-moichor
+  label: Moichor
+  partner_name: Moichor
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/moichor
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-mwi-animal-health
+  label: MWI Animal Health
+  partner_name: MWI Animal Health
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/mwi-animal-health
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-my-rover
+  label: My Rover
+  partner_name: My Rover
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/my-rover
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-mybalto-foundation
+  label: myBalto Foundation
+  partner_name: myBalto Foundation
+  category: Other
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/mybalto-foundation
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-national-bio-vet-laboratory
+  label: National Bio Vet Laboratory
+  partner_name: National Bio Vet Laboratory
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/national-bio-vet-laboratory
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-national-veterinary-services-nvs
+  label: National Veterinary Services (NVS)
+  partner_name: National Veterinary Services (NVS)
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/nvs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-nova-biomedical
+  label: Nova Biomedical
+  partner_name: Nova Biomedical
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/nova-biomedical
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-otto
+  label: Otto
+  partner_name: Otto
+  category: Client Engagement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/otto
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-parasight-system
+  label: Parasight System
+  partner_name: Parasight System
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/parasight-system-2
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-pawlicy-advisor
+  label: Pawlicy Advisor
+  partner_name: Pawlicy Advisor
+  category: Insurance
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/pawlicy-advisor
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-paws-app
+  label: Paws App
+  partner_name: Paws App
+  category: Client Engagement, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/paws-app
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-payjunction
+  label: PayJunction
+  partner_name: PayJunction
+  category: Payments
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/payjunction
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-petdesk-direct
+  label: PetDesk Direct
+  partner_name: PetDesk Direct
+  category: Client Engagement, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/petdesk
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-petdesk-phones
+  label: PetDesk Phones
+  partner_name: PetDesk Phones
+  category: Client Engagement, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/petdeskphones
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-petlink
+  label: PetLink
+  partner_name: PetLink
+  category: Microchips
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/petlink-2
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-petsure-eclaims
+  label: Petsure eClaims
+  partner_name: Petsure eClaims
+  category: Insurance
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/petsure-eclaims
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-phoenix-lab
+  label: Phoenix Lab
+  partner_name: Phoenix Lab
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/phoenix-lab
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-profitdiagnostix
+  label: Profitdiagnostix
+  partner_name: Profitdiagnostix
+  category: Finance & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/profitdiagnostix
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-provet-connect
+  label: Provet Connect
+  partner_name: Provet Connect
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/provet-connect
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-purview-image
+  label: Purview Image
+  partner_name: Purview Image
+  category: Digital Imaging & Interpretations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/purview
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-qml-pathology
+  label: QML Pathology
+  partner_name: QML Pathology
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/qml-pathology
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-qsm-diagnostics
+  label: QSM Diagnostics
+  partner_name: QSM Diagnostics
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/qsm-diagnostics
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-reflex-integrated
+  label: Reflex Integrated
+  partner_name: Reflex Integrated
+  category: Finance & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/reflex
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-reviewtree
+  label: ReviewTree
+  partner_name: ReviewTree
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/reviewtree
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-rvetlink
+  label: rVetLink
+  partner_name: rVetLink
+  category: Referrals
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/rvetlink
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-smartflow
+  label: SmartFlow
+  partner_name: SmartFlow
+  category: Patient Care
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/smartflow
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-sound-powered-by-antech
+  label: Sound Powered by Antech
+  partner_name: Sound Powered by Antech
+  category: Digital Imaging & Interpretations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/sound
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-svs-laboratories
+  label: SVS Laboratories
+  partner_name: SVS Laboratories
+  category: Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/svs-laboratories
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-svs-veterinary-supplies
+  label: SVS Veterinary Supplies
+  partner_name: SVS Veterinary Supplies
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/svs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-tekcollect
+  label: TekCollect
+  partner_name: TekCollect
+  category: Finance & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/tekcollect
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-true-north
+  label: True North
+  partner_name: True North
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/true-north
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-trupanion
+  label: Trupanion
+  partner: trupanion
+  partner_name: Trupanion
+  category: Insurance
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/trupanion
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vedi
+  label: Vedi
+  partner_name: Vedi
+  category: Patient Care
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vedi
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vello
+  label: Vello
+  partner_name: Vello
+  category: Client Engagement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vello
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vet-radar
+  label: Vet Radar
+  partner_name: Vet Radar
+  category: Patient Care
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vet-radar
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vet-rocket
+  label: Vet Rocket
+  partner_name: Vet Rocket
+  category: Digital Imaging & Interpretations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vet-rocket
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetcheck
+  label: VetCheck
+  partner_name: VetCheck
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetcheck
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetchip
+  label: VetChip
+  partner_name: VetChip
+  category: Microchips
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetchip
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetcove-home-delivery
+  label: Vetcove Home Delivery
+  partner_name: Vetcove Home Delivery
+  category: Online Pharmacy
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetcove-home-delivery
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetcove-purchasing-platform
+  label: Vetcove Purchasing Platform
+  partner_name: Vetcove Purchasing Platform
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetcove-purchasing-platform-2
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetek-labs
+  label: Vetek Labs
+  partner_name: Vetek Labs
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetek-labs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetenvoy
+  label: VetEnvoy
+  partner_name: VetEnvoy
+  category: Insurance
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetenvoy
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-veterinary-it-services
+  label: Veterinary IT Services
+  partner_name: Veterinary IT Services
+  category: Other
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/veterinary-it-services
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetgenus
+  label: VetGenus
+  partner_name: VetGenus
+  category: Finance & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetgenus
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetnostics
+  label: Vetnostics
+  partner_name: Vetnostics
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetnostics
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetrec
+  label: VetRec
+  partner_name: VetRec
+  category: AI Assistant, AI Receptionist
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetrec
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetsnap
+  label: VetSnap
+  partner_name: VetSnap
+  category: Controlled Drug Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetsnap
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetsource-data-insights
+  label: Vetsource Data & Insights
+  partner_name: Vetsource Data & Insights
+  category: Finance & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetsourcedata
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetsource-prescription-management
+  label: Vetsource Prescription Management
+  partner_name: Vetsource Prescription Management
+  category: Online Pharmacy
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetsource
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-vetstoria
+  label: Vetstoria
+  partner: vetstoria
+  partner_name: Vetstoria
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetstoria
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-weave
+  label: Weave
+  partner_name: Weave
+  category: Client Engagement, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/weave
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-wibbi
+  label: Wibbi
+  partner_name: Wibbi
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/wibbi
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-windcave
+  label: Windcave
+  partner_name: Windcave
+  category: Payments
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/windcave
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-xero
+  label: Xero
+  partner_name: Xero
+  category: Finance & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/xero
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-zebravet
+  label: ZebraVet
+  partner_name: ZebraVet
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/zebravet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-zoetis-point-of-care-diagnostics
+  label: Zoetis Point-of-Care Diagnostics
+  partner_name: Zoetis Point-of-Care Diagnostics
+  category: Diagnostics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoetis-point-of-care
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-zoetis-product-supplier
+  label: Zoetis Product Supplier
+  partner_name: Zoetis Product Supplier
+  category: Product Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoetis
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-zoetis-reference-laboratories
+  label: Zoetis Reference Laboratories
+  partner_name: Zoetis Reference Laboratories
+  category: Diagnostics, Reference Labs
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoetisreferencelaboratories
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ezyvet-zoom
+  label: Zoom
+  partner_name: Zoom
+  category: ezyVet integration
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoom
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

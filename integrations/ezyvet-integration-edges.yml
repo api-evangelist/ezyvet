@@ -11,6 +11,13 @@ checked:
 - https://n8n.io/integrations/ezyvet/
 - https://zapier.com/apps/ezyvet/integrations
 - zoom/integrations/zoom-integration-edges.yml
+- https://covetrus.com/covetrus-platform/industry-partners/
+- https://covetrus.com/covetrus-platform/workflow-and-productivity-tools/avimark/
+- https://digitail.com/integrations/
+- https://instinct.vet/integrations/
+- https://www.ezyvet.com/integrations
+- https://www.provet.com/integrations
+- https://www.shepherd.vet/integrations/
 summary: null
 marketplace_apps: []
 edges:
@@ -31,4 +38,1788 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Zoom app
+- partner_name: AKC Reunite
+  app: AKC Reunite
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/akc-reunite
+  category: Microchips
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: AllyDVM
+  app: AllyDVM
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/allydvm
+  category: Client Engagement, Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Antech In-house Diagnostics
+  app: Antech In-house Diagnostics
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/antech-diagnostics
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Antech Reference Labs
+  app: Antech Reference Labs
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/antech-reference-lab
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Apex Healthware
+  app: Apex Healthware
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/apexhealthware
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Asteris
+  app: Asteris
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/asteris
+  category: Digital Imaging & Interpretations
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: ATX Imaging
+  app: ATX Imaging
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/atx-imaging
+  category: Digital Imaging & Interpretations
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: AVA
+  app: AVA
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetpawer
+  category: AI Receptionist
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - United States
+  partner_held:
+    candidate: ava
+    why: 'market-fit gate: partner''s own tags carry no veterinary / animal-health / pet term'
+- partner_name: Awanui
+  app: Awanui
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/awanui
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - New Zealand
+- partner_name: Bionote
+  app: Bionote
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/bionote
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Blue Rabbit
+  app: Blue Rabbit
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/blue-rabbit
+  category: Online Pharmacy
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: CareCredit
+  app: CareCredit
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/carecredit
+  category: Payments
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Centaur Animal Health
+  app: Centaur Animal Health
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/centaur-animal-health
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United Kingdom
+- partner_name: Cenvet
+  app: Cenvet
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/cenvet
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Chckvet
+  app: Chckvet
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/chckvet-2
+  category: Client Engagement, Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Clinical Universe
+  app: Clinical Universe
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/clinical-universe
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: ClinicWise
+  app: ClinicWise
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/clinicwise
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: CoVet
+  app: CoVet
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/covet
+  category: AI Assistant
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: CUBEX
+  app: CUBEX
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/cubex
+  category: Controlled Drug Management
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Customer Radar
+  app: Customer Radar
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/customerradar
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+  - United States
+- partner_name: Digital Practice
+  app: Digital Practice
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/digital-practice-2
+  category: Client Engagement, Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - United Kingdom
+- partner_name: Dodo
+  app: Dodo
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/dodo
+  category: AI Receptionist
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - United Kingdom
+  - United States
+  partner_held:
+    candidate: dodo
+    why: 'market-fit gate: partner''s own tags carry no veterinary / animal-health / pet term'
+- partner_name: Dropbox
+  app: Dropbox
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/dropbox
+  category: Other
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+  partner_held:
+    candidate: dropbox
+    why: 'market-fit gate: partner''s own tags carry no veterinary / animal-health / pet term'
+- partner_name: Emailed Labs
+  app: Emailed Labs
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/emailed-labs
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+- partner_name: ezyVet Connect
+  app: ezyVet Connect
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/ezyvet-connect
+  category: Mobile
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: ezyVet Scan
+  app: ezyVet Scan
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/scan
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Fetchit
+  app: Fetchit
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/fetchit
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Fortis
+  app: Fortis
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/fortis
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: GapOnly
+  app: GapOnly
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/gaponly
+  category: Insurance
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: Google Maps API
+  app: Google Maps API
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/google-maps-api
+  category: Mobile
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Greenline
+  app: Greenline
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/greenline
+  category: Other
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Gribbles Veterinary Pathology
+  app: Gribbles Veterinary Pathology
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/gribbles
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Heska
+  app: Heska
+  partner: heska
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/heska
+  category: Digital Imaging & Interpretations
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United States
+  identity: wikidata Q30281769 'Heska (United States)' P856 https://www.heska.com/
+  identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+- partner_name: IDEXX Reference Laboratories
+  app: IDEXX Reference Laboratories
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-reference-lab
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: IDEXX VetConnect PLUS
+  app: IDEXX VetConnect PLUS
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-vetconnect-plus
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - United Kingdom
+  - United States
+- partner_name: IDEXX VetLab Station
+  app: IDEXX VetLab Station
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-vetlab-station
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: IDEXX Web PACS
+  app: IDEXX Web PACS
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/idexx-web-pacs
+  category: Digital Imaging & Interpretations
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United States
+- partner_name: Inventory Ally
+  app: Inventory Ally
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/inventory-ally-2
+  category: Inventory Management
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: IT Guru
+  app: IT Guru
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/it-guru
+  category: Other
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Kahuvet
+  app: Kahuvet
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/kahuvet
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - New Zealand
+- partner_name: Knight Benedikt
+  app: Knight Benedikt
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/knight-benedikt
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Koala Health
+  app: Koala Health
+  partner: koala-health
+  partner_match: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/koala-health
+  category: Online Pharmacy
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+  identity_source: register-name
+  identity_note: register gave only the name 'Koala Health'; exact normalised match to koala-health's apis.yml name
+    (Kin 2026-10-20 decision 2)
+  register_name_note: register-name 'koalahealth' = koala-health; no wikidata P856
+- partner_name: Lyppard
+  app: Lyppard
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/lyppard
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Masterpet
+  app: Masterpet
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/masterpet
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: MicroVet Diagnostics
+  app: MicroVet Diagnostics
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/microvet-diagnostics
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Midwest Veterinary Lab
+  app: Midwest Veterinary Lab
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/midwest-vet-lab
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Midwest Veterinary Supply
+  app: Midwest Veterinary Supply
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/midwest-veterinary-supply
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: MiLab
+  app: MiLab
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/milab
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United Kingdom
+- partner_name: Modeus Vet S8
+  app: Modeus Vet S8
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vet-s8
+  category: Controlled Drug Management
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Moichor
+  app: Moichor
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/moichor
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: MWI Animal Health
+  app: MWI Animal Health
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/mwi-animal-health
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: My Rover
+  app: My Rover
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/my-rover
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: myBalto Foundation
+  app: myBalto Foundation
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/mybalto-foundation
+  category: Other
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: National Bio Vet Laboratory
+  app: National Bio Vet Laboratory
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/national-bio-vet-laboratory
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: National Veterinary Services (NVS)
+  app: National Veterinary Services (NVS)
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/nvs
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United Kingdom
+- partner_name: Nova Biomedical
+  app: Nova Biomedical
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/nova-biomedical
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Otto
+  app: Otto
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/otto
+  category: Client Engagement
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+  partner_held:
+    candidate: otto
+    why: 'market-fit gate: partner''s own tags carry no veterinary / animal-health / pet term'
+- partner_name: Parasight System
+  app: Parasight System
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/parasight-system-2
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Pawlicy Advisor
+  app: Pawlicy Advisor
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/pawlicy-advisor
+  category: Insurance
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Paws App
+  app: Paws App
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/paws-app
+  category: Client Engagement, Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: PayJunction
+  app: PayJunction
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/payjunction
+  category: Payments
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: PetDesk Direct
+  app: PetDesk Direct
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/petdesk
+  category: Client Engagement, Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: PetDesk Phones
+  app: PetDesk Phones
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/petdeskphones
+  category: Client Engagement, Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: PetLink
+  app: PetLink
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/petlink-2
+  category: Microchips
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Petsure eClaims
+  app: Petsure eClaims
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/petsure-eclaims
+  category: Insurance
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Phoenix Lab
+  app: Phoenix Lab
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/phoenix-lab
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Profitdiagnostix
+  app: Profitdiagnostix
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/profitdiagnostix
+  category: Finance & Analytics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: Provet Connect
+  app: Provet Connect
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/provet-connect
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - New Zealand
+- partner_name: Purview Image
+  app: Purview Image
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/purview
+  category: Digital Imaging & Interpretations
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: QML Pathology
+  app: QML Pathology
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/qml-pathology
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: QSM Diagnostics
+  app: QSM Diagnostics
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/qsm-diagnostics
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Reflex Integrated
+  app: Reflex Integrated
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/reflex
+  category: Finance & Analytics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: ReviewTree
+  app: ReviewTree
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/reviewtree
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+- partner_name: rVetLink
+  app: rVetLink
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/rvetlink
+  category: Referrals
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United States
+- partner_name: SmartFlow
+  app: SmartFlow
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/smartflow
+  category: Patient Care
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Sound Powered by Antech
+  app: Sound Powered by Antech
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/sound
+  category: Digital Imaging & Interpretations
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+- partner_name: SVS Laboratories
+  app: SVS Laboratories
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/svs-laboratories
+  category: Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - New Zealand
+- partner_name: SVS Veterinary Supplies
+  app: SVS Veterinary Supplies
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/svs
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - New Zealand
+- partner_name: TekCollect
+  app: TekCollect
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/tekcollect
+  category: Finance & Analytics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: True North
+  app: True North
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/true-north
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+- partner_name: Trupanion
+  app: Trupanion
+  partner: trupanion
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/trupanion
+  category: Insurance
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - United States
+  identity: wikidata Q7848008 'Trupanion' P856 http://trupanion.com/
+  identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+- partner_name: Vedi
+  app: Vedi
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vedi
+  category: Patient Care
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Vello
+  app: Vello
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vello
+  category: Client Engagement
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Vet Radar
+  app: Vet Radar
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vet-radar
+  category: Patient Care
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Vet Rocket
+  app: Vet Rocket
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vet-rocket
+  category: Digital Imaging & Interpretations
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United States
+- partner_name: VetCheck
+  app: VetCheck
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetcheck
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: VetChip
+  app: VetChip
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetchip
+  category: Microchips
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Vetcove Home Delivery
+  app: Vetcove Home Delivery
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetcove-home-delivery
+  category: Online Pharmacy
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Vetcove Purchasing Platform
+  app: Vetcove Purchasing Platform
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetcove-purchasing-platform-2
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Vetek Labs
+  app: Vetek Labs
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetek-labs
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: VetEnvoy
+  app: VetEnvoy
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetenvoy
+  category: Insurance
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United Kingdom
+- partner_name: Veterinary IT Services
+  app: Veterinary IT Services
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/veterinary-it-services
+  category: Other
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United Kingdom
+- partner_name: VetGenus
+  app: VetGenus
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetgenus
+  category: Finance & Analytics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Vetnostics
+  app: Vetnostics
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetnostics
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: VetRec
+  app: VetRec
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetrec
+  category: AI Assistant, AI Receptionist
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: VetSnap
+  app: VetSnap
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetsnap
+  category: Controlled Drug Management
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Vetsource Data & Insights
+  app: Vetsource Data & Insights
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetsourcedata
+  category: Finance & Analytics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+- partner_name: Vetsource Prescription Management
+  app: Vetsource Prescription Management
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetsource
+  category: Online Pharmacy
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Vetstoria
+  app: Vetstoria
+  partner: vetstoria
+  partner_match: register-name
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/vetstoria
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+  identity_source: register-name
+  identity_note: register gave only the name 'Vetstoria'; exact normalised match to vetstoria's apis.yml name (Kin
+    2026-10-20 decision 2)
+  register_name_note: register-name 'vetstoria' = vetstoria; no wikidata P856
+- partner_name: Weave
+  app: Weave
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/weave
+  category: Client Engagement, Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Canada
+  - United States
+  partner_held:
+    candidate: weave
+    why: 'market-fit gate: partner''s own tags carry no veterinary / animal-health / pet term'
+- partner_name: Wibbi
+  app: Wibbi
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/wibbi
+  category: Marketing
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Windcave
+  app: Windcave
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/windcave
+  category: Payments
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+- partner_name: Xero
+  app: Xero
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/xero
+  category: Finance & Analytics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+  partner_held:
+    candidate: xero
+    why: 'market-fit gate: partner''s own tags carry no veterinary / animal-health / pet term'
+- partner_name: ZebraVet
+  app: ZebraVet
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/zebravet
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Zoetis Point-of-Care Diagnostics
+  app: Zoetis Point-of-Care Diagnostics
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoetis-point-of-care
+  category: Diagnostics
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+  - Canada
+  - New Zealand
+  - United Kingdom
+  - United States
+- partner_name: Zoetis Product Supplier
+  app: Zoetis Product Supplier
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoetis
+  category: Product Suppliers
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - Australia
+- partner_name: Zoetis Reference Laboratories
+  app: Zoetis Reference Laboratories
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoetisreferencelaboratories
+  category: Diagnostics, Reference Labs
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  countries:
+  - United States
+- partner_name: Zoom
+  app: Zoom
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.ezyvet.com/integrations/zoom
+  category: ezyVet integration
+  detected_by: sweep-veterinary-pet.py
+  detected: '2026-10-20'
+  partner_held:
+    candidate: zoom-phone
+    why: 'market-fit gate: partner''s own tags carry no veterinary / animal-health / pet term'
 templates: []
