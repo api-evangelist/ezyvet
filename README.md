@@ -1,4 +1,4 @@
-# ezyVet (ezyvet)
+# ezyVet
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,112 +64,136 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-ezyVet is cloud-based veterinary practice information management software (PIMS) for clinics, specialty, and emergency hospitals - covering patient records, scheduling, clinical workflows, billing, inventory, and diagnostics. Founded in New Zealand in 2006, ezyVet was **acquired by IDEXX Laboratories in June 2021** and sits alongside IDEXX's Cornerstone and Neo PIMS offerings (the acquisition also included Vet Radar).
+ezyVet is cloud-based veterinary practice information management software (PIMS) for clinics, specialty, and emergency hospitals, covering patient records, scheduling, clinical workflows, billing, inventory, and diagnostics. Founded in New Zealand in 2006, ezyVet was acquired by IDEXX Laboratories in June 2021 and sits alongside IDEXX's Cornerstone and Neo PIMS offerings (the acquisition also included Vet Radar). ezyVet exposes a documented RESTful API of roughly 216 endpoints over animals/patients, contacts/clients, appointments, consultations, invoices, products, and diagnostics. The API is partner-gated - developer access requires an approved integration application and issued client credentials - but the endpoint catalog, best-practice guides, and a full Postman collection are publicly documented at developers.ezyvet.com. Authentication is OAuth 2.0 Client Credentials with 12-hour bearer tokens.
 
-ezyVet exposes a documented RESTful API of roughly **216 endpoints**. Access is **partner-gated** - developer access requires an approved integration application and issued client credentials - but the endpoint catalog, best-practice guides, and a full Postman collection are publicly documented at [developers.ezyvet.com](https://developers.ezyvet.com/docs/v1/). Authentication is **OAuth 2.0 Client Credentials** (`POST /v1/oauth/access_token`) issuing bearer tokens with a 12-hour TTL. Base URLs are `https://api.ezyvet.com` (production) and `https://api.trial.ezyvet.com` (trial).
+**Areas:** Veterinary · Practice Management · PIMS · Healthcare · Animal Health · IDEXX
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ezyvet/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ezyvet/refs/heads/main/apis.yml)
+## ezyVet on APIs.io
 
-## Tags
+Everything profiled for ezyVet is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ezyvet/](https://apis.io/providers/ezyvet/)** — or go straight to one of the APIs or properties below.
 
-- Veterinary
-- Practice Management
-- PIMS
-- Healthcare
-- Animal Health
-- IDEXX
-- Partner Gated
+### APIs (9)
 
-## Timestamps
+- [ezyVet Animals API](https://apis.io/apis/ezyvet/ezyvet-animals-api/) — Animal (patient) records and reference data. (Modeled.)
+- [ezyVet Appointments API](https://apis.io/apis/ezyvet/ezyvet-appointments-api/) — Appointments, types, and statuses. (Modeled.)
+- [ezyVet Authentication API](https://apis.io/apis/ezyvet/ezyvet-authentication-api/) — OAuth 2.0 Client Credentials token exchange. (Confirmed.)
+- [ezyVet Consultations API](https://apis.io/apis/ezyvet/ezyvet-consultations-api/) — Clinical consultation records. (Modeled.)
+- [ezyVet Contacts API](https://apis.io/apis/ezyvet/ezyvet-contacts-api/) — Contacts (clients / pet owners) and their details. (Confirmed CRUD.)
+- [ezyVet Diagnostics API](https://apis.io/apis/ezyvet/ezyvet-diagnostics-api/) — Diagnostic requests and results (Standard Diagnostic Integration). (Confirmed integration.)
+- [ezyVet Invoices API](https://apis.io/apis/ezyvet/ezyvet-invoices-api/) — Invoices, invoice lines, and payments. (Modeled.)
+- [ezyVet Prescriptions API](https://apis.io/apis/ezyvet/ezyvet-prescriptions-api/) — Prescriptions and vaccinations. (Partially confirmed.)
+- [ezyVet Products API](https://apis.io/apis/ezyvet/ezyvet-products-api/) — Product / inventory catalog. (Modeled.)
 
-- **Created:** 2026-07-04
-- **Modified:** 2026-07-04
+### Published properties
 
-## Grounding
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The OAuth token endpoint, the `/v1/contact` CRUD endpoints, the `/v2/prescription` GET, the Standard Diagnostic Integration, and the base URLs / rate-limit behavior are **confirmed** from ezyVet's public developer documentation. The remaining resource paths (animal, appointment, consult, invoice, product, and their reference resources) are **modeled** on ezyVet's documented `/v1/{resource}` REST pattern and published resource categories; exact paths and verbs should be verified against the official partner Postman collection. See [review.yml](review.yml) for the confirmed-vs-modeled endpoint breakdown.
+#### Agentic access (1)
 
-## APIs
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### ezyVet Authentication API
+- [Ezyvet Agentic Access](https://apis.io/agentic-access/ezyvet/ezyvet-agentic-access/)
 
-OAuth 2.0 Client Credentials token endpoint. Exchange `partner_id`, `client_id`, `client_secret`, `grant_type`, and `scope` for a bearer access token (12-hour TTL) that authorizes every other API call.
+#### Collections (10)
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Base URL:** `https://api.ezyvet.com`
+Postman and Open Collection request collections.
 
-### ezyVet Animals (Patients) API
+- [ezyVet API](https://apis.io/collections/ezyvet/open-ezyvet/)
+- [ezyVet Animals API](https://apis.io/collections/ezyvet/open-ezyvet-animals-api/)
+- [ezyVet Animals Appointments API](https://apis.io/collections/ezyvet/open-ezyvet-appointments-api/)
+- [ezyVet Animals Authentication API](https://apis.io/collections/ezyvet/open-ezyvet-authentication-api/)
+- [ezyVet Animals Consultations API](https://apis.io/collections/ezyvet/open-ezyvet-consultations-api/)
+- [ezyVet Animals Contacts API](https://apis.io/collections/ezyvet/open-ezyvet-contacts-api/)
+- [ezyVet Animals Diagnostics API](https://apis.io/collections/ezyvet/open-ezyvet-diagnostics-api/)
+- [ezyVet Animals Invoices API](https://apis.io/collections/ezyvet/open-ezyvet-invoices-api/)
+- [ezyVet Animals Prescriptions API](https://apis.io/collections/ezyvet/open-ezyvet-prescriptions-api/)
+- [ezyVet Animals Products API](https://apis.io/collections/ezyvet/open-ezyvet-products-api/)
 
-Manage animal (patient) records - species, breed, sex, colour, microchip, owner linkage, and clinical metadata - plus reference resources for species and breeds.
+#### Security (3)
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Base URL:** `https://api.ezyvet.com`
+Authentication, trust centre, and vulnerability disclosure.
 
-### ezyVet Contacts (Clients) API
+- [Ezyvet Authentication](https://apis.io/security/ezyvet/ezyvet-authentication/)
+- [Ezyvet Domain Security](https://apis.io/security/ezyvet/ezyvet-domain-security/)
+- [Ezyvet Vulnerability Disclosure](https://apis.io/security/ezyvet/ezyvet-vulnerability-disclosure/)
 
-Create, list, retrieve, update, and delete contacts - the clients (pet owners), businesses, vendors, and staff a practice interacts with - along with their addresses and details. (`/v1/contact` CRUD confirmed.)
+#### Plans and pricing (2)
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Base URL:** `https://api.ezyvet.com`
+Published plans, tiers and prices.
 
-### ezyVet Appointments API
+- [Ezyvet Plans Pricing](https://apis.io/plans/ezyvet/ezyvet-plans-pricing/)
+- [Ezyvet Price Estimates](https://apis.io/plans/ezyvet/ezyvet-price-estimates/)
 
-Book and manage appointments against animals, contacts, resources, and users, with appointment type and status reference resources.
+#### Rate limits (1)
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Base URL:** `https://api.ezyvet.com`
+Published request limits.
 
-### ezyVet Consultations (Clinical) API
+- [Ezyvet Rate Limits](https://apis.io/rate-limits/ezyvet/ezyvet-rate-limits/)
 
-Access clinical consultations - the visit-level records tying an animal, contact, and presenting problem to history, diagnoses, and treatment - plus related clinical resources.
+#### FinOps (1)
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Base URL:** `https://api.ezyvet.com`
+What the API costs to run, by operation.
 
-### ezyVet Invoices (Billing) API
+- [Ezyvet Finops](https://apis.io/finops/ezyvet/ezyvet-finops/)
 
-Read and manage invoices, invoice lines, and payments for services and products billed to clients.
+## Where to find this API
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Base URL:** `https://api.ezyvet.com`
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### ezyVet Products (Inventory) API
+- [Website](https://www.ezyvet.com)
+- [Documentation](https://developers.ezyvet.com/docs/v1/)
+- [Pricing](https://www.ezyvet.com/pricing/us)
+- [Blog](https://www.ezyvet.com/blog)
 
-Browse and manage the product and inventory catalog - billable products, services, and stock items - plus product groups and pricing.
+## API Evangelist rating
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Base URL:** `https://api.ezyvet.com`
+**Kin Score 33.0** — thin · rubric 0.24.0 · scored 2026-10-17
 
-### ezyVet Diagnostics API
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 48.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 27.4 |
+| Access clarity | 31.6 |
 
-Diagnostic request and result resources powering ezyVet's Standard Diagnostic Integration, letting lab and imaging partners push results back against a patient's clinical record over a RESTful, OAuth 2.0 Client Credentials interface. (Integration confirmed.)
+**Agent readiness 22.3** — agent-aware
 
-- **Human URL:** [https://developers.ezyvet.com/docs/v1/integrations/diagnostic/](https://developers.ezyvet.com/docs/v1/integrations/diagnostic/)
-- **Base URL:** `https://api.ezyvet.com`
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-### ezyVet Prescriptions and Vaccinations API
+**Regulatory alignment 14.1** — Health
 
-Manage prescriptions (including a v2 prescription resource and external Rx flows for pharmacy partners) and vaccination records.
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ezyvet/](https://apis.io/providers/ezyvet/).
 
-- **Human URL:** [https://developers.ezyvet.com/guides/external-pharmacy.html](https://developers.ezyvet.com/guides/external-pharmacy.html)
-- **Base URL:** `https://api.ezyvet.com`
+## How this profile is made
 
-## Common Properties
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- **LinkedIn:** [https://www.linkedin.com/company/ezyvet](https://www.linkedin.com/company/ezyvet)
-- **Website:** [https://www.ezyvet.com](https://www.ezyvet.com)
-- **Documentation:** [https://developers.ezyvet.com/docs/v1/](https://developers.ezyvet.com/docs/v1/)
-- **Plans:** [plans/ezyvet-plans-pricing.yml](plans/ezyvet-plans-pricing.yml)
-- **Rate Limits:** [rate-limits/ezyvet-rate-limits.yml](rate-limits/ezyvet-rate-limits.yml)
-- **FinOps:** [finops/ezyvet-finops.yml](finops/ezyvet-finops.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ezyVet: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-## Rate Limits
+## Open an issue
 
-- ~60 requests/minute per endpoint
-- ~180 calls/minute per practice database per partner
-- HTTP 429 on excess; inspect `x-ratelimit-remaining` and `x-ratelimit-reset` headers
-- Bearer tokens: 12-hour TTL
-
-## Maintainers
-
-- **Kin Lane** — kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ezyvet/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
